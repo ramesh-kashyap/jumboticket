@@ -4,7 +4,7 @@
     <div class="container text-center">
         <h1>Create an <span class="gradient-text">Account</span></h1>
         <p class="lead mt-4 mb-5" style="color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto;">
-            Join helixfund.live and start your investment journey today
+            Join leonexus.live and start your investment journey today
         </p>
     </div>
 </div>
