@@ -1,837 +1,740 @@
-<style>
-    .button {
-        cursor: pointer;
-        font-size: 1.4rem;
-        border-radius: 16px;
-        border: none;
-        padding: 2px;
-        background: radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b);
-        position: relative;
-    }
-
-    .button::after {
-        content: "";
-        position: absolute;
-        width: 65%;
-        height: 60%;
-        border-radius: 120px;
-        top: 0;
-        right: 0;
-        box-shadow: 0 0 20px #ffffff38;
-        z-index: -1;
-    }
-
-    .blob1 {
-        position: absolute;
-        width: 70px;
-        height: 70%;
-        border-radius: 16px;
-        bottom: 0;
-        left: 0;
-        background: radial-gradient(circle 60px at 0% 100%,
-                #3fe9ff,
-                #0000ff80,
-                transparent);
-        box-shadow: -10px 10px 30px #0051ff2d;
-    }
-
-    .inner {
-        padding: 5px 25px;
-        border-radius: 14px;
-        color: #fff;
-        z-index: 3;
-        position: relative;
-        background: radial-gradient(circle 80px at 80% -50%, #777777, #0f1111);
-    }
-
-    .inner::before {
-        content: "";
-        width: 100%;
-        height: 100%;
-        left: 0;
-        top: 0;
-        border-radius: 14px;
-        background: radial-gradient(circle 60px at 0% 100%,
-                #00e1ff1a,
-                #0000ff11,
-                transparent);
-        position: absolute;
-    }
-
-.account-overview .card .card-header {
-    padding: 1.25rem;
-    background: linear-gradient(to right, #ffffff, #c979ff, #d6c507, #c1ff28, #b47606, #ff8e01, #ffffff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.form-control {
-    border: 1px solid rgba(114, 161, 222, 0.15);
-    border-radius: 12px;
-    color: #ffffff;
-    padding: 0.8rem 1rem;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    background: linear-gradient(303deg, rgba(114, 161, 222) 0%, rgba(52, 0, 124) 100%);
-}
-</style>
-<style>
-.blink {
-   background: linear-gradient(to right, #ffffff, #c979ff, #d6c507, #c1ff28, #b47606, #ff8e01, #ffffff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
 
 
-}
-</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<div id="main-content" class="flex-grow-1 m-3">
-    <nav class="navbar navbar-expand-lg sticky-top shadow-sm main-header">
-        <div class="container-fluid">
-            <button class="btn btn-outline-secondary d-md-none me-2" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <button id="sidebarToggle" class="btn btn-outline-secondary d-none d-md-inline-block me-3">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <span class="navbar-brand text-capitalize text-white mb-0 h1 d-none d-sm-inline-block">account</span>
-
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item mb-0 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-circle fa-lg me-1"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
-                        <!--<li><a class="dropdown-item" href="{{route('user.GenerateTicket')}}"><i-->
-                        <!--            class="fas fa-headset fa-fw me-2"></i>Support</a></li>-->
-                                    
-                        <li><a class="dropdown-item" href="{{route('user.profile')}}"><i
-                                    class="fas fa-user-edit fa-fw me-2"></i>Edit Account</a></li>
-                        <li><a class="dropdown-item" href="{{route('user.ChangePass')}}"><i
-                                    class="fas fa-shield-alt fa-fw me-2"></i>Security</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            class="d-none">
-                            @csrf
-                        </form>
-                        <li><a class="dropdown-item text-danger" href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                    class="fas fa-sign-out-alt fa-fw me-2"></i>Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!-- <div class="top-video">
-                <video class="top" src="{{asset('')}}assets/video/top.mp4" type="video/mp4" muted autoplay loop plays-inline
-                    poster="video/poster.png"></video>
-            </div> -->
-
-
-
-    <div class="row mt-3">
-        <!-- Account Security Card -->
-        <!-- <div class="col-12 mb-4 security-notice">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="mb-0"><i class="fas fa-shield-alt me-2"></i>Security Notices</h4>
-                        </div>
-                        <div class="card-body">
-
-                            <div class="alert alert-warning mb-0">
-                                <h5>Two Factor Authentication Not Enabled</h5>
-                                <p>Enhance your account security by activating Two Factor Authentication.</p>
-                                <a href="?a=security" class="sbmt">Enable 2FA</a>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
-
-        <?php
-            
-            $quantifiable_count = 0;
-            $vip = 0;
-            if ($balance >= 10 ) {
-                $quantifiable_count = 2;
-                $vip = 1;
-            } 
-            if ($balance >= 200  && $userDirect >= 5) {
-                $quantifiable_count = 4;
-                $vip = 2;
-            } 
-            if ($balance >= 400 && $userDirect >= 10) {
-                $quantifiable_count = 6;
-                $vip = 3;
-            } 
-            // dd($userDirect);
-            ?>
-        <div class="col-md-6 mb-4  account-overview">
-            <div class="card h-100">
-                <div class="card-header">
-                    <h4 class="mb-0"><i class="fas fa-chart-line me-2"></i>Trade Center</h4>
-                </div>
-                <div class="card-body">
-                    <!-- Junior Agent Logo / Title -->
-                    <h2 style="font-family: 'Arial Black', sans-serif; letter-spacing: 2px;">
-                        <span style="background: linear-gradient(to right, #ffffff, #c979ff, #d6c507, #c1ff28, #b47606, #ff8e01, #ffffff);background-size: 200% auto;-webkit-background-clip: text;background-clip: text;-webkit-text-fill-color: transparent;">HF-{{ $vip }}</span>
-
-                    </h2>
-
-
-                    @php
-                    $progress = $quantifiable_count > 0 ? ($todaysRoi / $quantifiable_count) * 100 : 0;
-                    @endphp
-
-                    <!-- Progress Bar -->
-                    <div class="progress my-3"
-                        style="height: 20px; border-radius: 50px; background-color: rgba(255,255,255,0.3);">
-                        <div class="progress-bar" role="progressbar"
-                            style="width: {{ $progress }}%; background:  #6e0daf; border-radius: 50px;"
-                            aria-valuenow="{{ $progress }}" aria-valuemin="0" aria-valuemax="100">
-                        </div>
-                    </div>
-
-                    <!-- Assigned Orders -->
-                    <p class="mt-2" style="font-size: 16px;">Daily Assigned Trades:</p>
-                    <h4><b>{{ $todaysRoi }}/{{ $quantifiable_count }}</b></h4>
-
-                    <!-- Buttons -->
-
-
-
-                
-                                                   @php
-                                use Carbon\Carbon;
-                            
-                                $lastTrade = Auth::user()->last_trade;
-                            
-                                // Set timezone to Asia/Kolkata
-                                $lastTradeDateTime = $lastTrade ? Carbon::parse($lastTrade)->timezone('Asia/Kolkata') : null;
-                                $currentDateTime = now('Asia/Kolkata');
-                            
-                                // Define 5:30 AM today in Asia/Kolkata timezone
-                                $today530AM = Carbon::createFromTime(5, 30, 0, 'Asia/Kolkata');
-                            
-                                // Check if current time is after or equal to 5:30 AM today
-                                $canTradeTimeReached = $currentDateTime->greaterThanOrEqualTo($today530AM);
-                            
-                                // Check if user has already traded today after 5:30 AM
-                                $hasTradedToday = $lastTradeDateTime 
-                                    && $lastTradeDateTime->isSameDay($currentDateTime) 
-                                    && $lastTradeDateTime->greaterThanOrEqualTo($today530AM);
-                            @endphp
-                            
-                            @if (!$hasTradedToday && $canTradeTimeReached && Auth::user()->active_status == "Active")
-                                <div class="btns d-flex justify-content-center mt-3 gap-2">
-                                    <a href="{{ route('user.tradeOn') }}" class="button"
-                                        style="display: block; width: 100%; max-width: 500px; text-decoration: none;">
-                                        <div class="blob1"></div>
-                                        <div class="blob2"></div>
-                                        <div class="inner"
-                                            style="background: radial-gradient(circle 80px at 80% -50%, #a020f0, #4b0082); text-align: center; width: 100%;">
-                                            Start Quantization
+                                <div class="px-[25px] py-[20px] flex-1">
+                                    <div>
+                                        <div
+                                            class="flex items-center bg-white rounded-lg overflow-hidden">
+                                            <div
+                                                class="w-40 bg-[#ECC762] py-[12px] px-[10px] relative winner-txt">
+                                                <span
+                                                    class="flex items-center font-medium"><i
+                                                        class="bx bx-trophy mr-1"></i>
+                                                    Latest
+                                                    Winners</span>
+                                            </div>
+                                            <div
+                                                class="w-[calc(100%-160px)] flex">
+                                                <marquee>
+                                                    Mega Jackpot Winner:
+                                                    <strong><!----><span>Adiam
+                                                            Tewolde</span> ($
+                                                        <span>100000.00</span>)
+                                                    </strong>
+                                                    | Royal Jackpot Winner:
+                                                    <strong><span>Alexandre
+                                                            Brito</span> ($
+                                                        <span>500000.00</span>)
+                                                    </strong>
+                                                    | Jumbo Jackpot Winner:
+                                                    <strong><span>Rediet
+                                                            Abebe</span> ($
+                                                        <span>1000000.00</span>)
+                                                    </strong>
+                                                </marquee>
+                                            </div>
                                         </div>
-                                    </a>
+                                        <div class="mt-6"></div>
+                                        <div
+                                            class="block lg:flex justify-between items-center px-4 py-2 bg-orange-100 border border-orange-200 text-orange-400 rounded-md">
+                                            <span>Please update your
+                                                profile</span><a
+                                                href="/profile/edit-profile"
+                                                class="inline-flex justify-center mt-3 lg:mt-0 items-center text-gray-900 bg-[#ECC762] border border-l-0 border-[#ECC762] rounded-md uppercase font-semibold h-[40px] px-4">Update
+                                                Now</a>
+                                        </div>
+                                        <div class="flex flex-wrap -mx-3 mt-3">
+                                            <div
+                                                class="w-full xl:w-1/2 2xl:w-6/12 px-3 my-3">
+                                                <div
+                                                    class="bg-white px-6 py-6 rounded-lg">
+                                                    <div
+                                                        class="block items-center justify-between dtimer">
+                                                        <div
+                                                            class="lg:mb-[15px] lg:ml-[15px] text-center lg:text-left mb-2">
+                                                            <h4
+                                                                class="uppercase font-semibold">
+                                                                Live Draw Timer
+                                                            </h4>
+                                                        </div>
+                                                        <div
+                                                            class="timer text-center lg:text-left">
+                                                            <div>
+                                                                <div
+                                                                    class="day">
+                                                                    <span
+                                                                        class="number">01</span>
+                                                                    <div
+                                                                        class="format">Day</div>
+                                                                </div>
+                                                                <div
+                                                                    class="hour">
+                                                                    <span
+                                                                        class="number">02</span>
+                                                                    <div
+                                                                        class="format">Hours</div>
+                                                                </div>
+                                                                <div
+                                                                    class="min">
+                                                                    <span
+                                                                        class="number">31</span>
+                                                                    <div
+                                                                        class="format">Minutes</div>
+                                                                </div>
+                                                                <div
+                                                                    class="sec">
+                                                                    <span
+                                                                        class="number">58</span>
+                                                                    <div
+                                                                        class="format">Seconds</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="lg:mb-[15px] lg:ml-[15px] text-center lg:text-left">
+                                                            <h4
+                                                                class="uppercase font-semibold">Jackpots</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-[#ECC762] border border-[#BF953F] rounded-lg ticbox mt-3">
+                                                     
+                                                            <div
+                                                                class="ticbox__top">
+                                                                <div
+                                                                    class="ticbox__top--left">
+                                                                    <span>Mega
+                                                                        Jackpot</span>
+                                                                    <p>$100,000</p>
+                                                                </div>
+                                                                <div
+                                                                    class="ticbox__top--right">
+                                                                    <a href="#">
+                                                                        Buy Now
+                                                                        $10
+                                                                        <i
+                                                                            class="bx bx-chevron-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="ticbox__bottom">
+                                                                <ul>
+                                                                    <li>Total
+                                                                        No. of
+                                                                        Winners:
+                                                                        <span>20</span></li>
+                                                                    <li>Draw
+                                                                        No.:
+                                                                        <span>59</span></li>
+                                                                </ul>
+                                                            </div>
+                                                        
+                                                    </div>
+                                                    <div
+                                                        class="bg-[#ECC762] border border-[#BF953F] rounded-lg ticbox mt-6">
+                                                     <div
+                                                                class="ticbox__top">
+                                                                <div
+                                                                    class="ticbox__top--left">
+                                                                    <span>Royal
+                                                                        Jackpot</span>
+                                                                    <p>$500,000</p>
+                                                                </div>
+                                                                <div
+                                                                    class="ticbox__top--right">
+                                                                    <a href="#">
+                                                                        Buy Now
+                                                                        $50
+                                                                        <i
+                                                                            class="bx bx-chevron-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="ticbox__bottom">
+                                                                <ul>
+                                                                    <li>Total
+                                                                        No. of
+                                                                        Winners:
+                                                                        <span>25</span></li>
+                                                                    <li>Draw
+                                                                        No.:
+                                                                        <span>59</span></li>
+                                                                </ul>
+                                                            </div>
+                                                    </div>
+                                                    <div
+                                                        class="bg-[#ECC762] border border-[#BF953F] rounded-lg ticbox mt-6">
+                                                        <div
+                                                                class="ticbox__top">
+                                                                <div
+                                                                    class="ticbox__top--left">
+                                                                    <span>Jumbo
+                                                                        Jackpot</span>
+                                                                    <p>$1
+                                                                        Million</p>
+                                                                </div>
+                                                                <div
+                                                                    class="ticbox__top--right">
+                                                                    <a href="#">
+                                                                        Buy Now
+                                                                        $100
+                                                                        <i
+                                                                            class="bx bx-chevron-right"></i></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="ticbox__bottom">
+                                                                <ul>
+                                                                    <li>Total
+                                                                        No. of
+                                                                        Winners:
+                                                                        <span>30</span></li>
+                                                                    <li>Draw
+                                                                        No.:
+                                                                        <span>59</span></li>
+                                                                </ul>
+                                                            </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <style>
+                                                
+                                            </style>
+                                            <div
+                                                class="w-full xl:w-1/2 2xl:w-6/12 px-3 my-3">
+                                                <div
+                                                    class="bg-white px-6 pt-6 pb-4 rounded-lg">
+                                                    <div data-v-c3a81764
+                                                        class="bloq-head">
+                                                        <h4
+                                                            data-v-c3a81764>Quick
+                                                            Links</h4>
+                                                        <a
+                                                            data-v-c3a81764
+                                                            href="/profile/edit-profile"
+                                                            class>Update Profile
+                                                            <i
+                                                                data-v-c3a81764
+                                                                class="bx bx-chevron-right"></i></a>
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-wrap -mx-3">
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <a href="/deposit"
+                                                                class="block"><div
+                                                                    class="bg-[#111111] flex items-center cursor-pointer qlink-box">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-money"></i>
+                                                                    </div>
+                                                                    <a href><p
+                                                                            class="block">DEPOSIT</p>
+                                                                        <span
+                                                                            class="block">Add
+                                                                            Fund</span></a></div></a>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <a
+                                                                href="/daily-rewards"
+                                                                class="block"><div
+                                                                    class="bg-[#111111] flex items-center cursor-pointer qlink-box">
+                                                                    <div
+                                                                        class><i
+                                                                            class="bx bx-cart"></i></div>
+                                                                    <a href><p
+                                                                            class="block">Package</p>
+                                                                        <span
+                                                                            class="block">PURCHASE</span></a></div></a>
+                                                        </div>
+                                                        <!---->
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <a
+                                                                href="/my-winnings"
+                                                                class="block"><div
+                                                                    class="bg-[#111111] flex items-center cursor-pointer qlink-box">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-trophy"></i>
+                                                                    </div>
+                                                                    <a href><p
+                                                                            class="block">WINNINGS</p>
+                                                                        <span
+                                                                            class="block">Jackpots</span></a></div></a>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <a
+                                                                href="/withdraw-fund/request-withdrawal"
+                                                                class="block"><div
+                                                                    class="bg-[#111111] flex items-center cursor-pointer qlink-box">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-wallet"></i>
+                                                                    </div>
+                                                                    <a href><p
+                                                                            class="block">Payout</p>
+                                                                        <span
+                                                                            class="block">Withdraw</span></a></div></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div
+                                                    class="bg-white px-6 pt-6 pb-4 mt-6 rounded-lg">
+                                                    <div data-v-c3a81764
+                                                        class="bloq-head">
+                                                        <h4 data-v-c3a81764>My
+                                                            Wallet</h4>
+                                                        <a
+                                                            data-v-c3a81764
+                                                            href="/reports/wallet-report"
+                                                            class>View Wallet
+                                                            Report
+                                                            <i
+                                                                data-v-c3a81764
+                                                                class="bx bx-chevron-right"></i></a>
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-wrap -mx-3">
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <div
+                                                                class="flex items-center cursor-pointer qlink-box-2">
+                                                                <div class>
+                                                                    <img
+                                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABNCAYAAAAxWePoAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA0pJREFUeNrs3DFoU0EYB/B74aEdogTsEGyHCAE72be4FZI4dbOFDo4Z3BS0m6ubWzPU2RQ3EezopC1UEHSITh0CfYKVDhWemEHBwfselxJfk7uXy/PdXfL/w/ECLaX8+O6+e/ce8diM5u3TWsAvdT5q4loa+PEuH48b9/Y7qr/jAUyadY64K/sFf4rB6gJqeQywZJ6Japz+ChwA61dYVpFWoQ8wZQJZFfqOYJUGsIL/DJZMzbk1MAFWF2imEloPaBlYMjvWAXKwSmJKBpauHm3eQPaMd+EEGF0rDiy9LY63aWQj7ShYv9Lo7mMnzV1IZoCau3xTOD9EY6ARpYXKFNAyMAKIBMgX8bmTBU5mgAbBRuEw1eKeVzxDu/wzCJ79gf1WmFflZA4o0B7wsZbRenOuaujKcaJpOrTwBN5DftlKsSMPBcin5BTjMCGbwXgcjyruVYqKQgbuTnjBtPuAR47s02wLzb5GAXjaoZ3JVgEOE6UJwAkDQAACEIAARAAIQEeT60OlYK3FSlfHe37UO+2yXz9PWHTcYadHB/HnmQXUSXG+Go/5ayusunKfRd867OTwdTwAqBGqYBrlpVXWPdiOKxRroCZkcLsVQwJQd/pcLLKlW4+MIlozhak5JBuEf6EYr3+qEOKf3724ycwsIDWF8EN7aJVRA6ncbLK5S2Up4scXd3Pv0tZPYaoswn3//I608xI0dWmsgZIcvnkiRaRKLS0EAFQhyqZp+foqAFUZtlaeAfKOTNMZgIqGIwtNZQAqQrd0sk02AFWAx6MB5y6XAZhme4MKnCC9710r/g8cqAIQgAAEoIMpXqkCcJLIbtfyPOZ3twIlB615ngk6/UxE5y4FgOKwQDaF8zzadxJwcXlDuv5hCsvwbmxIp+/Xzy/RhUeFDktlzz2o8vJ+Y8GJNxPoaRzBqQ5K6bg/9+2UNV11IWAV1jwH1383RhWaunl2X/sAxTsvOqFpS+/J4E5EE8/E1HVqDRwWOpHuvts2/pqb7yIcrXc0ZMf6AEyg0VM4usOgYQOcEUBa6Md96E13FjaBGQU0/TYpujAAAYgAEIAABCACwCwB98CgnZAA6VsaI1hoZbMgvimtwRTfVov8W3lMfEH3XwEGAM9WQebvAxmhAAAAAElFTkSuQmCC"
+                                                                        alt
+                                                                        class="w-[40px]" />
+                                                                </div>
+                                                                <a
+                                                                    href="/deposit"
+                                                                    class="block"><p
+                                                                        class="block">$
+                                                                        0</p>
+                                                                    <span
+                                                                        class="block wallet-lin wallet-lin-btn">D
+                                                                        Wallet</span><span
+                                                                        class="wallet-desc">(For
+                                                                        Deposit)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <div
+                                                                class="flex items-center qlink-box-2">
+                                                                <div class>
+                                                                    <img
+                                                                        src="data:image/png;base64,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"
+                                                                        alt
+                                                                        class="w-[40px]" />
+                                                                </div>
+                                                                <a
+                                                                    class="block"><p
+                                                                        class="block">$
+                                                                        0</p>
+                                                                    <span
+                                                                        class="block wallet-lin">W
+                                                                        Wallet</span><span
+                                                                        class="wallet-desc">(Winnings
+                                                                        &amp;
+                                                                        ROI
+                                                                        Income)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <div
+                                                                class="flex items-center qlink-box-2">
+                                                                <div class>
+                                                                    <img
+                                                                        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANMAAADLCAYAAAD0gqYvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABS1JREFUeNrs3T1uG0cAgNGVwMJNApYC0jBdOtNFalFdSucEkmoXBk+Q5AQ2C9WWT2D5BKLqFGZuQBcxXDI/hQMEsGeUJbGkpIgid0nO7nvAQLBhWNZIH2Z2OVy3MkjE5dlhL3yI4zCMbhjtW/7YKIxhGFdHz64uNvnv2/MtIpF4eiv8FeMwfglRnYuJJoXTzlebdeK5S1ytfgxRjcVEXeMphtOt+FNOwjgKQY3EhHh2PKiWbzMVxdPJo3m8xXgWxaBfhfHEykQK8UxXns4O/3NPq7gpYWWiCfEseh5G6TFZmVg2nu7Ctq2T+Jf0bdl396xM3BfPdOVp1+xL7JW9OomJpsSz6FBMlBVPL7v/aE6d9VwzUUY8PTNS/nWTlUk8TdbJ/ju/JyZm4bQXtmziWT4m10zi2frRHMQkHmbGYqp/PJ0s3dMFYkI8DTNyAkI8lGPgminNeJp2uiCF7d2FmMTD+vphizcR027GE4PpiicJL6t6apGYVo+nuPKQhvMQUr+qv1xM4mnSitSv8hOI6WY4VT5yiu3cbOhv4oGULfE4XVDjiF7nK9JkE5+wJR7x1EQMZpRH9HbTj0ZuREz5C6Rd8SRvmH+MwfyRRxPHpMoHSzY6JqcLkjQqrCw7GUojYhJPMqHEON4XoslCKMM6faGtBOOp2yOnUr/IH+eB/FbnUGoRk6M5OxPK3HXLpu6QiUk8u262ggRXQqlJTIXTBY/FU1kos+uWqv+PIjFtJx6nC1YzLARSvPMllLrHJJ4HX6PctqIkdYtYTOWE45FTy60mxa2YaxQxOZpTXDmym3e8bLvEJJ47LuKn2zBbLlaLKT9h8DSM45rEMyzE8d6Wi8pjyiP6KYyTxC7gi1sut4TZbkwhpBjQi2w3XvOZWzmy+dvBjTy2QiIxhZBebXA1WtxyFX/Plot0YyoxpNnKkXnNhIbYK4T0c36NtM427MqUUjOjfAEYLhVTfrj0nXmD/xXfCj+4K6z9/OML8wT3ii8RXYbF5zK/2z0fU+HsHLCc2Mu7vJ25lenY3MCDtfNVqleMyaoEq3sz3fLFmDrmA9ZaoeJLStleqOqz+YC1He2bAyjFcYzJkR1Y34mVCUqyn3kaEJQWEyAmEBOICRATiAnEBGICxARiAjEBYgIxgZhATICYQEwgJhATsKKWKbjp0VcH2aOvD0zEkj79+TH79NdHMflRuOngux+yzvcnJmJJ41/Pr4dtHiAmEBOICRATiAnEBGICxARiAjEBYgIxgZigvrwF4xaTD6ONvqUgvn8qvu2jLJt+O0ScL8R0+w/H76PrsSntb7pJx4RtHogJxARiAsQEYgIxgZgAMYGYQEyAmEBMICYQEyAmEBOICcQEiAnEBGICxARiAjGBmAAxgZhATICYQEwgJhATICYQE4gJxASICcQEYgLEBGICMYGYADGBmEBMICZATCAmEBMgJhATiAnEBIgJxARiAjEBYgIxgZgAMYGYQEwgJkBMICYQEyAmEBOICcQEiAnEBAlpmYLt+/efv7PJh5GJSNze5dnhZ9MAtnkgJhATICYQE4gJxASICcQEYgLEBGICMYGYADGBmEBMICZATCAmEBMgJhAT7HBMQ9MA5cT01jTA2i5iTOdhTMwFrGWwf/TsKoY0MBewsmHoaDi9AfEyDE+Oh4eLi1F/es2U5avTqe0ePFg/9DOaxZQHFX/jKIyx+YGlnIZuzqe/mHudKQ/qSRgX5gnudN1JMaRo764/fXl22Asfnofx1NzBLKLBYkRTXwQYAIfqoeYxf4U7AAAAAElFTkSuQmCC"
+                                                                        alt
+                                                                        class="w-[40px]" />
+                                                                </div>
+                                                                <a
+                                                                    class="block"><p
+                                                                        class="block">$
+                                                                        0</p>
+                                                                    <span
+                                                                        class="block wallet-lin">T
+                                                                        Wallet</span><span
+                                                                        class="wallet-desc">(For
+                                                                        Tickets
+                                                                        Purchase)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <div
+                                                                class="flex items-center qlink-box-2">
+                                                                <div class>
+                                                                    <img
+                                                                        src="data:image/png;base64,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"
+                                                                        alt
+                                                                        class="w-[40px]" />
+                                                                </div>
+                                                                <a
+                                                                    class="block"><p
+                                                                        class="block">$
+                                                                        0</p>
+                                                                    <span
+                                                                        class="block wallet-lin">R
+                                                                        Wallet</span><span
+                                                                        class="wallet-desc">(Rewards)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <div
+                                                                class="flex items-center qlink-box-2">
+                                                                <div class>
+                                                                    <img
+                                                                        src="data:image/png;base64,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"
+                                                                        alt
+                                                                        class="w-[40px]" />
+                                                                </div>
+                                                                <a
+                                                                    class="block"><p
+                                                                        class="block">$
+                                                                        0</p>
+                                                                    <span
+                                                                        class="block wallet-lin">A
+                                                                        Wallet</span><span
+                                                                        class="wallet-desc">(Referral
+                                                                        &amp;
+                                                                        binary
+                                                                        income
+                                                                        )</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
+                                                            <div
+                                                                class="flex items-center qlink-box-2">
+                                                                <div class>
+                                                                    <img
+                                                                        src="data:image/png;base64,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"
+                                                                        alt
+                                                                        class="w-[40px]" />
+                                                                </div>
+                                                                <a
+                                                                    class="block"><p
+                                                                        class="block">$
+                                                                        0</p>
+                                                                    <span
+                                                                        class="block wallet-lin">Jumbo
+                                                                        Coin
+                                                                        Wallet</span><span
+                                                                        class="wallet-desc">(Jumbo
+                                                                        Coin
+                                                                        Wallet)</span></a>
+                                                            </div>
+                                                        </div>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap -mx-2 mt-3">
+                                            <div class="w-full px-2 mt-1 mb-3">
+                                                <div
+                                                    class="bg-white px-4 sm:px-6 pt-4 pb-4 rounded-lg shadow-sm">
+                                                    <div data-v-c3a81764
+                                                        class="bloq-head">
+                                                        <h4 data-v-c3a81764>A
+                                                            Wallet Capping
+                                                            Limit</h4>
+                                                        <a
+                                                            data-v-c3a81764
+                                                            href="/reports/wallet-report?id=5"
+                                                            class>Wallet Report
+                                                            <i
+                                                                data-v-c3a81764
+                                                                class="bx bx-chevron-right"></i></a>
+                                                    </div>
+                                                    <div class="mt-4">
+                                                        <div
+                                                            class="relative w-full h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+                                                            <div
+                                                                class="h-full bg-[#ecc762] transition-all duration-700 ease-in-out"
+                                                                style="width: 0%"></div>
+                                                            <div
+                                                                class="absolute top-0 left-0 h-full flex items-center text-[11px] font-semibold px-2 transition-all duration-700 ease-in-out text-black justify-end"
+                                                                style="width: 100%">
+                                                                <span
+                                                                    class="truncate">NaN%</span>
+                                                            </div>
+                                                        </div>
+                                                        <p
+                                                            class="mt-2 text-xs sm:text-sm font-medium text-red-700 text-center sm:text-left"></p>
+                                                    </div>
+                                                    <div
+                                                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 mt-4 text-sm sm:text-base text-gray-700">
+                                                        <div><strong>A wallet
+                                                                capping:</strong>
+                                                            $0.00</div>
+                                                        <div><strong>Capping
+                                                                reached:</strong>
+                                                            $0.00</div>
+                                                        <div><strong>Capping
+                                                                remaining:</strong>
+                                                            $0.00</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap -mx-3 mt-3">
+                                            <div
+                                                class="w-full xl:w-6/12 2xl:w-6/12 px-3 my-3">
+                                                <div
+                                                    class="bg-white px-6 pt-6 pb-4 rounded-lg">
+                                                    <div data-v-c3a81764
+                                                        class="bloq-head">
+                                                        <h4
+                                                            data-v-c3a81764>Referral</h4>
+                                                        <a
+                                                            data-v-c3a81764
+                                                            href="/reports/referral-income-report"
+                                                            class>Referral
+                                                            Report
+                                                            <i
+                                                                data-v-c3a81764
+                                                                class="bx bx-chevron-right"></i></a>
+                                                    </div>
+                                                    <div
+                                                        class="flex justify-center mt-5">
+                                                        <div
+                                                            class="max-w-lg w-full text-center">
+                                                            <h5
+                                                                class="text-[21px] text-[#222] font-semibold uppercase">
+                                                                Refer A Friend
+                                                                Program
+                                                            </h5>
+                                                            <p
+                                                                class="text-[#444] mt-2 text-[14px]">
+                                                                Copy and share
+                                                                the below links
+                                                                on your social
+                                                                media platform
+                                                                or email to get
+                                                                more referrals.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-wrap -mx-3">
+                                                        <div
+                                                            class="w-full xl:w-1/2 2xl:w-1/2 px-3 mt-5 mb-3">
+                                                            <label for>Left
+                                                                Referral
+                                                                Link</label>
+                                                            <div
+                                                                class="flex mt-2">
+                                                                <input
+                                                                    type="text"
+                                                                    class="rounded-none rounded-l-lg bg-gray-50 border font-semibold text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-[#ECC762] p-3" /><button
+                                                                    type="button"
+                                                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-[#ECC762] border border-l-0 border-[#ECC762] rounded-r-md">
+                                                                    <i
+                                                                        class="bx bx-copy text-xl"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full xl:w-1/2 2xl:w-1/2 px-3 mt-5 mb-3">
+                                                            <label for>Right
+                                                                Referral
+                                                                Link</label>
+                                                            <div
+                                                                class="flex mt-2">
+                                                                <input
+                                                                    type="text"
+                                                                    class="rounded-none rounded-l-lg bg-gray-50 border font-semibold text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-[#ECC762] p-3" /><button
+                                                                    type="button"
+                                                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-[#ECC762] border border-l-0 border-[#ECC762] rounded-r-md">
+                                                                    <i
+                                                                        class="bx bx-copy text-xl"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="flex justify-center border-t border-gray-200 pt-5 mt-7">
+                                                        <div
+                                                            class="max-w-lg w-full text-center">
+                                                            <a
+                                                                href="/marketing-tools"
+                                                                class="inline-block bg-[#ECC762] text-[#111] px-5 py-3 rounded-lg text-sm uppercase font-semibold mt-4 mb-5 transition-all hover:opacity-90">View
+                                                                Referral
+                                                                Banners</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div
+                                                class="w-full xl:w-6/12 2xl:w-6/12 px-3 my-3">
+                                                <div
+                                                    class="bg-white px-6 pt-6 pb-6 rounded-lg">
+                                                    <div data-v-c3a81764
+                                                        class="bloq-head">
+                                                        <h4 data-v-c3a81764>My
+                                                            Stats</h4>
+                                                        <a data-v-c3a81764
+                                                            href="/my-winnings"
+                                                            class>View More
+                                                            <i
+                                                                data-v-c3a81764
+                                                                class="bx bx-chevron-right"></i></a>
+                                                    </div>
+                                                    <div
+                                                        class="flex flex-wrap -mx-3">
+                                                        <div
+                                                            class="w-full xl:w-6/12 2xl:w-6/12 px-3">
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-package"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Package
+                                                                            Purchased</span>
+                                                                        <p
+                                                                            class="block">0.00</p></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-trophy"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Total
+                                                                            Winnings</span>
+                                                                        <p
+                                                                            class="block">$0</p></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-network-chart"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Network
+                                                                            Commission</span>
+                                                                        <p
+                                                                            class="block">$0.00</p></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bxl-graphql"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Referral
+                                                                            Commission</span>
+                                                                        <p
+                                                                            class="block">$0</p></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div
+                                                            class="w-full xl:w-6/12 2xl:w-6/12 px-3">
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-money"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Total
+                                                                            Deposit</span>
+                                                                        <p
+                                                                            class="block">$0.00</p></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="w-full mb-3 mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-wallet"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Total
+                                                                            Withdraw</span>
+                                                                        <p
+                                                                            class="block">$0.00</p></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-user-voice"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Total
+                                                                            Referrals</span>
+                                                                        <p
+                                                                            class="block">0</p></a>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="w-full mt-6">
+                                                                <div
+                                                                    class="flex items-center qlink-box-2">
+                                                                    <div class>
+                                                                        <i
+                                                                            class="bx bx-cart-alt"></i>
+                                                                    </div>
+                                                                    <a
+                                                                        class="block"><span
+                                                                            class="block">Tickets
+                                                                            Purchased</span>
+                                                                        <p
+                                                                            class="block">0</p></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <div style><!----></div>
+                                        <!----><!---->
+                                    </div>
                                 </div>
-                            @elseif (!isset($_GET['trade']))
-                                <div class="btns d-flex justify-content-center mt-3 gap-2">
-                                    <a class="button" style="display: block; width: 100%; max-width: 500px; text-decoration: none; ">
-                                        <div class="blob1"></div>
-                                        <div class="blob2"></div>
-                                        <div class="inner"
-                                            style="text-align: center; width: 100%;    cursor: not-allowed;color: gray;">
-                                            Start Quantization
-                                        </div>
-                                    </a>
-                                </div>
-                            @endif
-
-
-                    <?php
-                                $status = false;
-                                $trade = false;
-                                
-                                $u_id = Auth::user()->id;
-                                if (isset($_GET['trade'])) {
-                                    $trade = true;
-                                    $trade_row = \DB::table('contract')->where('user_id', $u_id)->where('c_status', 1)->orderBy('created_at', 'DESC')->first();
-                                    if (!$trade_row) {
-                                        $status = true;
-                                    }
-                                    if ($status == true) {
-                                        header('Location: dashboard?notrade');
-                                        exit();
-                                    }
-                                }
-                                
-                                ?>
-
-                    @if ($trade === true)
-                    <div id="zscooProcess" class="quantify-execute mt-4"
-                        style="display: block; width: 100%; max-width: 500px;">
-                        <div class="process-box">
-                            <h3 style="font-size: 16px;">@lang('Helix Fund Run Panel Process') <span
-                                    class="spinner">⏳</span></h3>
-                            <div id="stepsLog"></div>
-                        </div>
-                    </div>
-
-                    <style>
-                        .spinner {
-                            animation: spin 1s linear infinite;
-                            display: inline-block;
-                            font-size: 18px;
-                            margin-left: 5px;
-                        }
-
-                        @keyframes spin {
-                            0% {
-                                transform: rotate(0deg);
-                            }
-
-                            100% {
-                                transform: rotate(360deg);
-                            }
-                        }
-
-                        .process-box {
-                            background: #222423;
-                            padding: 20px 25px;
-                            border-radius: 10px;
-                            font-family: 'Segoe UI', sans-serif;
-                            max-width: 450px;
-                            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
-                            margin: 30px auto;
-                        }
-
-                        #stepsLog p {
-                            margin: 8px 0;
-                            font-size: 14px;
-                            color: #fff;
-                            line-height: 1.4;
-                        }
-
-                        .quantify-execute {
-                            margin-bottom: 80px;
-                        }
-
-                    </style>
-
-                    <script>
-                        document.addEventListener('DOMContentLoaded', async () => {
-                            const exchanges = ["BINANCE", "BITTREX", "KUCOIN", "HUOBI", "OKX"];
-                            const coin = "{{ $trade_row->c_name ?? 'SOL' }}";
-                            // Get random item from array
-                            function getRandomExchange() {
-                                return exchanges[Math.floor(Math.random() * exchanges.length)];
-                            }
-                            // Assign random exchanges
-                            const buyExchange = getRandomExchange();
-                            let sellExchange = getRandomExchange();
-
-                            // Ensure buy and sell are not the same
-                            while (sellExchange === buyExchange) {
-                                sellExchange = getRandomExchange();
-                            }
-
-                            const steps = [
-                                'Starting Helix Fund quantification',
-                                'Start queuing...',
-                                'Start capturing various exchange market prices',
-                                `Start executing buy order ${coin} ${buyExchange}`,
-                                `Start executing sell order ${coin} ${sellExchange}`,
-                                'Start allocating commissions',
-                                'The execution is completed and the commission distribution is successful'
-                            ];
-
-                            const stepsLog = document.getElementById('stepsLog');
-
-                            for (let i = 0; i < steps.length; i++) {
-                                await new Promise(resolve => setTimeout(resolve, 2000));
-                                const p = document.createElement('p');
-                                p.textContent = steps[i];
-                                stepsLog.appendChild(p);
-                            }
-
-                            setTimeout(() => {
-                                document.getElementById('zscooProcess').style.display = 'none';
-
-
-                            }, 4000);
-
-                            function closetrade() {
-                                
-                                  document.getElementById('zscooProcess').style.display = 'none';
-                                  
-                                fetch("{{ route('user.close-trade') }}").then(response => response
-                                        .json()) // Parse JSON response
-                                    .then(data => {
-                                        if (data.status) {
-                                         const profit = data.profit ?? "0.0000"; // fallback if no profit sent sent
-                                            console.log(data);
-                                            // Set the profit in the modal
-                                            document.getElementById("profitAmount").textContent =
-                                                `${profit} USDT`;
-
-                                            // Show modal and overlay
-
-                                            document.getElementById("resultModal").style.display = "block";
-
-
-
-                                         
-                                            // Add the 'show' class to trigger transitions/animations (like Bootstrap modals)
-
-                                            // Show execute button again
-                                            $('.quantify-execute').css('display', 'block');
-                                            
-                                            function hideModal() {
-                                                  document.getElementById("resultModal").style.display = "none";
-                                            }  
-
-
-                                        } else {
-                                            // exit
-                                            $('.team-income').css('display', 'none')
-                                        }
-                                        // setTimeout(pollServer, 500000);
-                                    })
-                                    .catch((error) => {
-                                        console.error("Error polling server:", {
-                                            message: error.message,
-                                            stack: error.stack,
-                                            response: error.response,
-                                        });
-                                        // Retry polling after a delay (e.g., every 5 seconds)
-                                        // 
-                                    });
-
-                            }
-                            setTimeout(closetrade, 4000);
-
-
-                        });
-
-                    </script>
-                    @endif
-
-
-
-
-
-
-
-
-
-                    {{-- loader --}}
-
-
-
-
-                </div>
-            </div>
-        </div>
-
-        <!-- Popup Modal -->
-       <div id="resultModal" style="display:none; position: fixed; z-index: 9999; inset: 0; background-color: rgba(0, 0, 0, 0.7);">
-              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                          background-color: #1e1e1e; color: white; border-radius: 20px; padding: 30px; text-align: center; width: 90%; max-width: 400px;">
-                          
-                <!-- <button onclick="hideModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button> -->
-            
-                <div style="margin-bottom: 20px;">
-                  <div style="width: 80px; height: 80px; margin: 0 auto; background: #6e0daf; border-radius: 50%;
-                              display: flex; align-items: center; justify-content: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 16 16">
-                      <path d="M13.485 1.893a.75.75 0 0 1 1.06 1.06L6.56 11.939 1.453 6.828a.75.75 0 0 1 1.06-1.06l3.932 3.931L13.485 1.893z" />
-                    </svg>
-                  </div>
-                </div>
-            
-                <h5 style="font-weight: bold; margin-bottom: 5px;">Strategy Complete</h5>
-                <p style="margin-bottom: 10px;">Congratulations To Get</p>
-                <h4 id="profitAmount" style="font-weight: bold; margin-bottom: 25px;">0.0000 USDT</h4>
-            
-               <div style="display: flex; justify-content: center; gap: 15px; cursor: pointer;">
-                  <!-- <a href="#" style="padding: 10px 20px; border: 2px solid #6e0daf; color: #6e0daf; text-decoration: none; border-radius: 5px;">View Order</a> -->
-                  <a  onclick="hideModal()" style="padding: 10px 20px; background-color: #6e0daf; color: white; text-decoration: none; border-radius: 5px;">Confirm</a>
-                </div>
-              </div>
-            </div>
-
-
-        <!-- Account Overview Card -->
-        <div class="col-md-6 mb-4 account-overview">
-            <div class="card h-100">
-                <div class="card-header">
-                    <h4 class="mb-0"><i class="fas fa-user me-2"></i>Account Information</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    
-                                    <td><i class="fas fa-user-circle me-2"></i>Username:</td>
-                                    <td class="text-end">{{ $profile_data ? $profile_data->name : '' }}</td>
-                                </tr>
-                                <tr>
-                                    
-                                    <td><i class="fas fa-user-circle me-2"></i>UserId:</td>
-                                    <td class="text-end">{{ $profile_data ? $profile_data->username : '' }}</td>
-                                </tr> 
-                                <tr>
-                                    
-                                    <td><i class="fas fa-user-circle me-2"></i> <span  style="color:#fff;">Rank:</span></td>
-                                    <td class="text-end" >{{ $profile_data->rank ?"R".$profile_data->rank : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-calendar-alt me-2"></i>Registration Date:</td>
-                                    <td class="text-end">{{ $profile_data ? $profile_data->created_at : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-clock me-2"></i>Activation Date:</td>
-                                    <td class="text-end">{{ $profile_data->adate ? $profile_data->adate : 'N/A' }}</td>
-                                </tr> 
-                                @php
-                                    $registrationDate = \Carbon\Carbon::parse(Auth::user()->created_at)->timezone('Asia/Kolkata');
-                                @endphp
-                                
-                                @if(Auth::user()->active_status == 'Pending')
-                                <tr>
-                                    <td><i class="fas fa-clock me-2"></i> <span class="blink"> Get 100% Cashback:</span></td>
-                                    <td class="text-end">
-                                        <span id="countdown" data-start="{{ $registrationDate }}"></span>
-                                    </td>
-                                </tr>
-                                @endif
-                               
-                                <tr>
-                                    <td ><a href="https://wa.me/?text={{ asset('') }}register?ref={{ Auth::user()->username }}"  target="_blank"  style="color:#fff;    text-decoration: none;"><i class="fa fa-whatsapp"  style="color:green"></i> Referral Link: </a> </td>
-                                    <td class="text-end">
-                                        <div class="input-group" style="cursor: pointer;">
-                                            
-                                            <input onclick="window.open('{{ asset('') }}register?ref={{ Auth::user()->username }}', '_blank')" type="text" class="form-control" id="refLink"
-                                                value="{{ asset('') }}register?ref={{ Auth::user()->username }}"  style="cursor: pointer;"
-                                                readonly>
-                                            <button class="sbmt" onclick="copyReferralLink()">
-                                                <i class="fas fa-copy"></i>
-                                            </button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Financial Overview Card -->
-        <div class="col-md-6 mb-4 account-overview">
-            <div class="card h-100">
-                <div class="card-header">
-                    <h4 class="mb-0"><i class="fas fa-chart-line me-2"></i>Financial Overview</h4>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <!-- <tr>
-                                            <td><i class="fas fa-wallet me-2"></i>Account Balance:</td>
-                                            <td class="text-end">
-                                                <h4 class="mb-1">$<b>{{ number_format(Auth::user()->totalIncome->sum('comm'), 2) }}  {{generalDetail()->cur_text}}</b></h4>
-                                            </td>
-                                        </tr> -->
-                                <tr>
-                                    <td><i class="fas fa-coins me-2"></i>Active Deposit:</td>
-                                    <td class="text-end">
-                                        $<b>{{ number_format(Auth::user()->Activeinvestment->sum('amount'), 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-hand-holding-usd me-2"></i>Todays Revenue :</td>
-                                    <td class="text-end">
-                                        $<b>{{ number_format($todaysRoiSum, 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr> 
-                                
-                                <tr>
-                                    <td><i class="fas fa-hand-holding-usd me-2"></i>Earned Total:</td>
-                                    <td class="text-end">
-                                        $<b>{{ number_format(Auth::user()->totalIncome->sum('comm'), 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr>
-                                 <tr>
-                                    <td><i class="fas fa-hand-holding-usd me-2"></i>Total Compounding:</td>
-                                    <td class="text-end">
-                                        $<b>{{ number_format(Auth::user()->totalcompound->sum('amount'), 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr>
-                                 <tr>
-                                    <td><i class="fas fa-hand-holding-usd me-2"></i>Compounding ROI:</td>
-                                    <td class="text-end">
-                                        $<b>{{ number_format(Auth::user()->compoundingROI->sum('comm'), 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td><i class="fas fa-hand-holding-usd me-2"></i>Available Balance:</td>
-                                    <td class="text-end">
-                                        $<b>{{ number_format(Auth::user()->available_balance(), 2) }}
-                                            {{ generalDetail()->cur_text }}</b></td>
-                                </tr>
-
-                                <tr>
-                                    <td><i class="fas fa-hourglass-half me-2"></i>Pending Withdrawal:</td>
-                                    <td class="text-end">$<b>{{ number_format(Auth::user()->withdraw(), 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr>
-                                <tr>
-                                    <td><i class="fas fa-money-bill-wave me-2"></i>Total Withdrawal:</td>
-                                    <td class="text-end">$<b>{{ number_format(Auth::user()->withdrawtotal(), 2) }}
-                                            {{generalDetail()->cur_text}}</b></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- Transaction History Card -->
-        <div class="col-md-6 mb-4 account-overview">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="mb-0"><i class="fas fa-history me-2"></i>Recent Transactions</h4>
-                </div>
-                <div class="card-body">
-                   <div class="row g-3">
-                     @if (is_array($records) || $records)
-                                    @foreach ($records as $value)
-                <div class="col-md-12">
-            <div class="card h-100" style="background: linear-gradient(303deg, rgba(114, 161, 222) 0%, rgba(52, 0, 124) 100%)">
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-start mb-2">
-                        <div>
-                            <h5 class="mb-1">{{ $value->type === 'contract' ? 'ORDER REVENUE' : ($value->type === 'investment' ? 'DEPOSIT' : strtoupper($value->type)) }}
-</h5>
-                       <div class="small" style="color: {{ in_array(strtolower($value->description), ['approved', 'active']) ? 'green' : 'inherit' }}">
-    {{ strtolower($value->description) === 'approved' || strtolower($value->description) === 'active' ? 'COMPLETED' : strtoupper($value->description) }}
-    {{ $value->type === 'contract' ? '-USDT' : '' }}
-</div>
-
-                        </div>
-                        <div class="text-end">
-                            <div class="d-flex align-items-center justify-content-end">
-                                <h4 class="mb-0 me-2">{{ number_format($value->amount, 2) }}</h4>
-                                <img src="{{asset('')}}assets/images/102.png" height="17">
                             </div>
-                            <small>  {{ date('D, d M Y H:i:s', strtotime($value->date)) }}</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-               @endforeach
-                                @else
-                                    <p style="color: #000;">@lang('No bill history available.')</p>
-                                @endif
-            </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</div>
 
 
 
-@if(Auth::user()->active_status=="Active" && Auth::user()->popup_check!=1)
 
-
-        <!-- Popup Modal -->
-           <div  id="activationModel" style="display:block; position: fixed; z-index: 9999; inset: 0; background-color: rgba(0, 0, 0, 0.7);">
-              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                          background-color: #1e1e1e; color: white; border-radius: 20px; padding: 30px; text-align: center; width: 90%; max-width: 400px;">
-                          
-                <!-- <button onclick="hideModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button> -->
-            
-                <div style="margin-bottom: 20px;">
-                  <div style="width: 80px; height: 80px; margin: 0 auto; background: #6e0daf; border-radius: 50%;
-                              display: flex; align-items: center; justify-content: center;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 16 16">
-                      <path d="M13.485 1.893a.75.75 0 0 1 1.06 1.06L6.56 11.939 1.453 6.828a.75.75 0 0 1 1.06-1.06l3.932 3.931L13.485 1.893z" />
-                    </svg>
-                  </div>
-                </div>
-            
-                <h5 style="font-weight: bold; margin-bottom: 5px;margin-bottom: 5px;">🎉 Congratulations!</h5>
-                <p style="margin-bottom: 10px;"> Your account has been successfully activated with</p>
-                <h4 id="profitAmount" style="font-weight: bold; margin-bottom: 25px;">{{number_format(Auth::user()->package,2)}} USDT</h4>
-                <p style="margin-top: 8px;">
-                    Get ready to start your journey of smart trading and consistent earnings with Helix Fund.
-                </p>
-                        
-               <div style="display: flex; justify-content: center; gap: 15px; cursor: pointer;">
-                  <!-- <a href="#" style="padding: 10px 20px; border: 2px solid #6e0daf; color: #6e0daf; text-decoration: none; border-radius: 5px;">View Order</a> -->
-                  <a  onclick="handlePopupCloseAndUpdate()" style="padding: 10px 20px; background-color: #6e0daf; color: white; text-decoration: none; border-radius: 5px;">Confirm</a>
-                </div>
-              </div>
-            </div>
-
-
-
-@endif
-
-@include('layouts.upnl.sidebar')
-
-    @include('partials.notify')
-
-<!---->
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-</script>
-<script src="{{asset('')}}assets/js/dash.js"></script>
-
-
-<script>
-    window.addEventListener('load', function () {
-        // All resources (images, scripts, stylesheets, etc.) are loaded
-        const preloaderContainer = document.querySelector('.preloader-container');
-        const content = document.querySelector('.content');
-
-        if (preloaderContainer) {
-            // Add the 'hidden' class to trigger the fade-out animation
-            preloaderContainer.classList.add('hidden');
-
-            // Optional: If you want to completely remove the preloader from the DOM
-            // after the transition, you can listen for the 'transitionend' event.
-            preloaderContainer.addEventListener('transitionend', function () {
-                if (preloaderContainer.style.opacity === '0' || getComputedStyle(
-                        preloaderContainer).opacity === '0') {
-                    preloaderContainer.style.display =
-                        'none'; // Or preloaderContainer.remove();
-                }
-            }, {
-                once: true
-            }); // {once: true} ensures the event listener is removed after it fires
-        }
-
-        if (content) {
-            content.style.display = 'block'; // Or any other display type you need, e.g., 'flex'
-            // If you used opacity for content:
-            // content.style.opacity = '1';
-            // content.style.visibility = 'visible';
-        }
-    });
-
-    // Fallback in case 'load' event doesn't fire or takes too long (e.g., for broken images)
-    // You might want to adjust the timeout duration
-    setTimeout(function () {
-        const preloaderContainer = document.querySelector('.preloader-container');
-        const content = document.querySelector('.content');
-
-        if (preloaderContainer && !preloaderContainer.classList.contains('hidden')) {
-            console.warn("Preloader timeout reached. Forcing hide.");
-            preloaderContainer.classList.add('hidden');
-            if (preloaderContainer.style.opacity === '0' || getComputedStyle(preloaderContainer)
-                .opacity === '0') {
-                preloaderContainer.style.display = 'none';
-            }
-            if (content) {
-                content.style.display = 'block';
-            }
-        }
-    }, 10000); // 10 seconds timeout as an example
-
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const countdownEl = document.getElementById("countdown");
-        if (!countdownEl) return;
-
-        const startTime = new Date(countdownEl.dataset.start);
-        const endTime = new Date(startTime.getTime() + 7 * 24 * 60 * 60 * 1000);
-
-        function updateCountdown() {
-            const now = new Date();
-            const distance = endTime - now;
-
-            if (distance <= 0) {
-                countdownEl.innerText = "Expired";
-                return;
-            }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            countdownEl.innerText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        updateCountdown(); // initial call
-        setInterval(updateCountdown, 1000); // update every second
-    });
-</script>
-<script>
- function hideModal() {
-    document.getElementById("resultModal").style.display = "none";
-     location.reload();
-  }  
-    function copyReferralLink() {
-        const copyText = document.getElementById('refLink');
-        navigator.clipboard.writeText(copyText.value).then(function () {
-            alert("Link copied: " + copyText.value); // optional feedback
-        }, function (err) {
-            alert("Failed to copy link!");
-        });
-    }
-
-
-
-function handlePopupCloseAndUpdate() {
-    // 1. Close the popup (adjust selector based on your popup structure)
-    document.getElementById("activationModel").style.display = "none";
-
-    // 2. Make AJAX call to update popup_check
-     // Send AJAX POST to update popup_check
-    fetch('/user/update-popup-check', {
-        method: 'POST', // <-- Ensure this is POST
-        headers: {
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'), // Laravel CSRF
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ popup_check: true }) // This causes error only if method is GET
-    })
-    .then(response => response.json())
-    .then(data => {
-        // console.log('Popup check updated:', data);
-        // window.location.href = '/dashboard';
-    })
-    .catch(error => {
-        console.error('Error updating popup check:', error);
-    });
-}
-
-</script>
-</body>
-
-</html>

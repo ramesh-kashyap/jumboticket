@@ -1,0 +1,42 @@
+.loadingbar {
+    background-color: #454545;
+    height: 4px;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999
+}
+
+.loadingbar:before {
+    animation: loading .9s linear infinite;
+    background-color: #ecc762;
+    content: "";
+    display: block;
+    height: 4px;
+    left: -150px;
+    position: absolute;
+    width: 150px
+}
+
+@keyframes loading {
+    0% {
+        left: -150px;
+        width: 10%
+    }
+    50% {
+        width: 10%
+    }
+    70% {
+        width: 30%
+    }
+    80% {
+        left: 60%
+    }
+    95% {
+        left: 110%
+    }
+    to {
+        left: 100%
+    }
+}
