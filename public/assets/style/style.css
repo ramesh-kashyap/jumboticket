@@ -67,7 +67,7 @@ h6 {
     margin: 0px 15px;
     padding: 6px 15px;
     border-radius: 50px;
-    background-color: rgba(0, 0, 69, 0.38);
+    background-color: #bf953f;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     width: 60%;
@@ -113,11 +113,11 @@ h6 {
 .navbar-nav .nav-link.active::after {
     width: 80%;
     opacity: 1;
-    background: linear-gradient(90deg, #72a1de, #34007c);
+    background: linear-gradient(90deg, #bf953f, #bf953f);
 }
 
 .navbar-nav .nav-link.active:hover::after {
-    background: linear-gradient(90deg, #72a1de, #34007c);
+    background: linear-gradient(90deg, #bf953f, #bf953f);
 }
 
 .sbmt {
@@ -126,7 +126,7 @@ h6 {
     font-weight: 600;
     border: none;
     border-radius: 30px;
-    background: rgba(114, 161, 222, 0.032);
+    background: #bf953f;
     color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -137,7 +137,7 @@ h6 {
 }
 
 .sbmt:hover {
-    background: rgba(114, 161, 222, 0.45);
+    background:#bf953f;
     box-shadow: 0 0 15px rgba(114, 161, 222, 0.9411764706), inset 0 0 8px #72a1de;
     transform: scale(1.05);
 }
@@ -149,7 +149,7 @@ button,
     font-weight: 600;
     text-decoration: none;
     color: #ffffff;
-    background: rgba(114, 161, 222, 0.067);
+    background: #bf953f;
     border: 1px solid rgba(114, 161, 222, 0.4);
     border-radius: 40px;
     cursor: pointer;
@@ -162,7 +162,7 @@ button,
 
 button:hover,
 .button:hover {
-    background: rgba(114, 161, 222, 0.35);
+    background: #bf953f;
     box-shadow: 0 0 12px rgba(114, 161, 222, 0.6666666667), inset 0 0 6px #72a1de;
     transform: translateY(-2px);
 }
@@ -294,7 +294,7 @@ button:active,
 .gradient-char {
    display: inline-block;
     /* Good for background-clip */
-    background: linear-gradient(to right, #ffffff, #c979ff, #d6c507, #c1ff28, #b47606, #ff8e01, #ffffff);
+    background: linear-gradient(to right, #bf953f, #bf953f, #bf953f, #bf953f, #bf953f, #bf953f, #bf953f);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -362,7 +362,7 @@ button:active,
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-    background: rgba(114, 161, 222, 0.1);
+    background: #bf953f;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -447,7 +447,7 @@ button:active,
 .referrals .referral-card .commission .percentage {
     font-size: 3.5rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #72a1de, #34007c);
+    background: linear-gradient(90deg, #fff, #fffbff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -656,7 +656,7 @@ button:active,
     }
     .navbar-nav .nav-link.active::after {
         width: 115px;
-        background: linear-gradient(90deg, #72a1de, #34007c);
+        background: linear-gradient(90deg, #bf953f, #bf953f);
     }
     .hero {
         position: relative;
@@ -1043,13 +1043,13 @@ button:active,
     align-items: center;
     justify-content: center;
     border-radius: 20px;
-    background: rgba(114, 161, 222, 0.1);
+    background: #bf953f;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
 
 .plan-card .price-wrap {
-    color: #72a1de;
+    color: #f2edf1;
 }
 
 .plan-card .price-wrap .currency {

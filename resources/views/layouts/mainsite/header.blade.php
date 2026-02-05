@@ -88,8 +88,7 @@
     font-weight: 600;
     border: none;
     border-radius: 30px;
-    background:linear-gradient(303deg, rgba(114, 161, 222) 0%, rgba(52, 0, 124) 100%);
-    color: #ffffff;
+    background: linear-gradient(303deg, rgb(191 149 63) 0%, rgb(191 149 63) 100%);    color: #ffffff;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(114, 161, 222, 0.168627451), inset 0 0 5px rgba(114, 161, 222, 0.2392156863);
@@ -98,12 +97,12 @@
     text-decoration: none;
 }
 button:hover, .button:hover {
-    background: linear-gradient(303deg, rgba(114, 161, 222) 0%, rgba(52, 0, 124) 100%);
+    background: #bf953f;
     transform: translateY(-2px);
 }
 .gradient-text {
     display: inline-block;
-    background: linear-gradient(to right, #ffffff, #c979ff, #d6c507, #c1ff28, #b47606, #ff8e01, #ffffff);
+    background: linear-gradient(to right, #bf953f, #bf953f, #bf953f, #bf953f, #b47606, #bf953f, #bf953f);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
