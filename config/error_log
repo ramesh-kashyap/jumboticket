@@ -1,0 +1,4 @@
+[23-Dec-2025 03:45:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/helixfund/public_html/config/services.php:18
+Stack trace:
+#0 {main}
+  thrown in /home/helixfund/public_html/config/services.php on line 18
