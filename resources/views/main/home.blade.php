@@ -32,12 +32,13 @@
     </div>
 </div>
 </div>
+
+
 <div class="about-us">
 <div class="container">
     <div class="row mb-6">
         <div class="col-12 text-start">
-            <h2 style="translate: none; rotate: none; scale: none;  transform: translate(0px, 30px);margin-bottom: 50px;">About <span class="gradient-text">Us</span></h2>
-            <a href="{{route('about-us')}}" class="text-white">Read More →</a>
+         
         </div>
     </div>
     <div class="row g-4">
@@ -45,7 +46,7 @@
             <div class="card h-100 bento-card featured" style="translate: none; rotate: none; scale: none;  transform: translate(0px, 50px);">
                 <div class="card-body">
                     <div class="card-icon">
-                        <i class="bx bx-line-chart" style="font-size: 2rem; color: #72a1de"></i>
+                        <i class="bx bx-line-chart" style="font-size: 2rem; color: #ffff"></i>
                     </div>
                     <h3>Investment Excellence</h3>
                     <p>Helix Fund is a modern crypto investment platform designed for those who value speed, transparency, and consistent returns. Our mission is to simplify high-yield investing by offering automated, reliable, and well-structured plans that fit both beginners and experienced users.</p>
@@ -57,7 +58,7 @@
             <div class="card h-100 bento-card" style="translate: none; rotate: none; scale: none;  transform: translate(0px, 50px);">
                 <div class="card-body">
                     <div class="card-icon">
-                        <i class="bx bx-shield-quarter" style="font-size: 2rem; color: #72a1de"></i>
+                        <i class="bx bx-shield-quarter" style="font-size: 2rem; color: #ffff"></i>
                     </div>
                     <h4>Security First</h4>
                     <p>Bank-grade security protocols protecting your assets 24/7</p>
@@ -68,7 +69,7 @@
             <div class="card h-100 bento-card" style="translate: none; rotate: none; scale: none;  transform: translate(0px, 50px);">
                 <div class="card-body">
                     <div class="card-icon">
-                        <i class="bx bx-support" style="font-size: 2rem; color: #72a1de"></i>
+                        <i class="bx bx-support" style="font-size: 2rem; color: #ffff"></i>
                     </div>
                     <h4>Online Help Team</h4>
                     <p>Expert assistance available round the clock for all your needs</p>
@@ -79,7 +80,7 @@
             <div class="card h-100 bento-card" style="translate: none; rotate: none; scale: none;  transform: translate(0px, 50px);">
                 <div class="card-body">
                     <div class="card-icon">
-                        <i class="bx bx-wallet" style="font-size: 2rem; color: #72a1de"></i>
+                        <i class="bx bx-wallet" style="font-size: 2rem; color: #ffff"></i>
                     </div>
                     <h3>Diverse Portfolio</h3>
                     <p>With a commitment to clear communication, instant withdrawals, and a smooth user experience, Helix Fund brings together technology, trust, and performance — all in one seamless platform. Our community grows every day, and we’re excited to help more people stay in the flow of the crypto world.
@@ -104,7 +105,7 @@
                 <div class="card h-100 bento-card plan-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                     <div class="card-body text-center">
                         <div class="card-icon mx-auto">
-                            <i class="bx bx-rocket" style="font-size: 2.5rem; color: #72a1de"></i>
+                            <i class="bx bx-rocket" style="font-size: 2.5rem; color: #ffff"></i>
                         </div>
                         <h3 class="gradient-text mb-4">HF-1</h3>
                         <div class="price-wrap mb-4">
@@ -123,11 +124,20 @@
                 </div>
             </div>
 
+
+            <style>
+
+
+
+.bx-check:before {
+    color: #bf953f;
+    content: "\ea41"
+            }            </style>
             <div class="col-lg-4">
                 <div class="card h-100 bento-card plan-card featured" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                     <div class="card-body text-center">
                         <div class="card-icon mx-auto">
-                            <i class="bx bx-diamond" style="font-size: 2.5rem; color: #72a1de"></i>
+                            <i class="bx bx-diamond" style="font-size: 2.5rem; color: #ffff"></i>
                         </div>
                         <h3 class="gradient-text mb-4">HF -2</h3>
                         <div class="price-wrap mb-4">
@@ -150,7 +160,7 @@
                 <div class="card h-100 bento-card plan-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                     <div class="card-body text-center">
                         <div class="card-icon mx-auto">
-                            <i class="bx bx-crown" style="font-size: 2.5rem; color: #72a1de"></i>
+                            <i class="bx bx-crown" style="font-size: 2.5rem; color: #ffff"></i>
                         </div>
                         <h3 class="gradient-text mb-4">HF-3</h3>
                         <div class="price-wrap mb-4">
@@ -267,7 +277,7 @@
             <div class="card h-100 bento-card referral-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bx-medal" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bx-medal" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 1</h3>
                     <div class="commission">
@@ -282,7 +292,7 @@
             <div class="card h-100 bento-card referral-card featured" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bxs-medal" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bxs-medal" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 2</h3>
                     <div class="commission">
@@ -297,7 +307,7 @@
             <div class="card h-100 bento-card referral-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bxs-badge-check" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bxs-badge-check" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 3</h3>
                     <div class="commission">
@@ -315,7 +325,7 @@
             <div class="card h-100 bento-card referral-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bx-medal" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bx-medal" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 4</h3>
                     <div class="commission">
@@ -330,7 +340,7 @@
             <div class="card h-100 bento-card referral-card featured" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bxs-medal" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bxs-medal" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 5</h3>
                     <div class="commission">
@@ -345,7 +355,7 @@
             <div class="card h-100 bento-card referral-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bxs-badge-check" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bxs-badge-check" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 6</h3>
                     <div class="commission">
@@ -361,7 +371,7 @@
             <div class="card h-100 bento-card referral-card" style="translate: none; rotate: none; scale: none;   transform: translate(0px, 50px);">
                 <div class="card-body text-center">
                     <div class="card-icon">
-                        <i class="bx bxs-badge-check" style="font-size: 2.5rem; color: #72a1de"></i>
+                        <i class="bx bxs-badge-check" style="font-size: 2.5rem; color: #ffff"></i>
                     </div>
                     <h3 class="gradient-text">Level 7</h3>
                     <div class="commission">
