@@ -23,7 +23,7 @@
         <div class="col-md-9 mb-3 mb-md-0">
             <h1 style="null">Your <span class="gradient-text">Gateway</span> to <br> Consistent <span class="gradient-text">Crypto </span> Flow</h1>
             <p class="text-center" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">Join the next generation of crypto investors and grow your wealth in the
-                Helix Fund ecosystem.</p>
+                LeoNexus ecosystem.</p>
             <div class="d-flex justify-content-center">
                 <a href="{{route('register')}}" class="button" style="translate: none; rotate: none; scale: none; transform: translate(0px, 20px); opacity: 1;">Join Us</a>
             </div>
@@ -48,9 +48,17 @@
                     <div class="card-icon">
                         <i class="bx bx-line-chart" style="font-size: 2rem; color: #ffff"></i>
                     </div>
-                    <h3>Investment Excellence</h3>
-                    <p>Helix Fund is a modern crypto investment platform designed for those who value speed, transparency, and consistent returns. Our mission is to simplify high-yield investing by offering automated, reliable, and well-structured plans that fit both beginners and experienced users.</p>
-                    <p>Founded by a team of crypto traders and blockchain enthusiasts, Helix Fund was built to give people an opportunity to grow their capital through carefully calculated strategies. We focus on short- and mid-term investment cycles, ensuring daily or hourly profitability, depending on the plan you choose.</p>
+                     <h3>Smart System Design</h3>
+                    <p>
+                        LeoNexus is a thoughtfully built digital platform focused on simplicity,
+                        performance, and long-term usability. Every feature is designed to deliver
+                        a smooth and structured experience for users at every level.
+                    </p>
+                    <p>
+                        Our platform emphasizes clarity, automation, and reliable system flow,
+                        making it easy to navigate, manage activities, and stay in control — all
+                        within a secure and modern environment.
+                    </p>
                 </div>
             </div>
         </div>
@@ -60,8 +68,11 @@
                     <div class="card-icon">
                         <i class="bx bx-shield-quarter" style="font-size: 2rem; color: #ffff"></i>
                     </div>
-                    <h4>Security First</h4>
-                    <p>Bank-grade security protocols protecting your assets 24/7</p>
+                      <h4>Secure & Reliable</h4>
+                    <p>
+                        Advanced security measures and system protection to ensure
+                        a safe and trusted user experience.
+                    </p>
                 </div>
             </div>
         </div>
@@ -71,8 +82,11 @@
                     <div class="card-icon">
                         <i class="bx bx-support" style="font-size: 2rem; color: #ffff"></i>
                     </div>
-                    <h4>Online Help Team</h4>
-                    <p>Expert assistance available round the clock for all your needs</p>
+                    <h4>Dedicated Support</h4>
+                    <p>
+                        A responsive support system to assist users whenever
+                        guidance or help is needed.
+                    </p>
                 </div>
             </div>
         </div>
@@ -82,8 +96,12 @@
                     <div class="card-icon">
                         <i class="bx bx-wallet" style="font-size: 2rem; color: #ffff"></i>
                     </div>
-                    <h3>Diverse Portfolio</h3>
-                    <p>With a commitment to clear communication, instant withdrawals, and a smooth user experience, Helix Fund brings together technology, trust, and performance — all in one seamless platform. Our community grows every day, and we’re excited to help more people stay in the flow of the crypto world.
+                    <h3>Unified Digital Experience</h3>
+                    <p>
+                        LeoNexus brings together clean design, efficient workflows,
+                        and transparent operations in one unified platform.
+                        Built to scale and evolve, it adapts seamlessly to future
+                        system enhancements and user needs.
                     </p>
                 </div>
             </div>
