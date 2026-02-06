@@ -445,7 +445,7 @@ button:active,
 }
 
 .referrals .referral-card .commission .percentage {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: 700;
     background: linear-gradient(90deg, #fff, #fffbff);
     background-clip: text;
