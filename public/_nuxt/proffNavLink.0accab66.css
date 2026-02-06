@@ -1,0 +1,23 @@
+.nav-links[data-v-630ec677] {
+    background-color: #fff;
+    border-radius: 8px;
+    margin-top: 20px;
+    padding: 8px 9px
+}
+
+.nav-links li[data-v-630ec677] {
+    display: inline-block;
+    margin: 3px 2px
+}
+
+.nav-links li a[data-v-630ec677] {
+    background-color: #bf953f;
+    border-radius: 8px;
+    display: block;
+    font-weight: 600;
+    padding: 7px 12px
+}
+
+.nav-links li a.router-link-exact-active[data-v-630ec677] {
+    background-color: #ecc762
+}
