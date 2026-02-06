@@ -1,4 +1,8 @@
+<<<<<<< HEAD
     <div class="px-[25px] py-[20px] flex-1">
+=======
+ <div class="px-[25px] py-[20px] flex-1">
+>>>>>>> 70d755a (s)
                                     <div>
                                         <div
                                             class="bg-white px-6 py-6 rounded-lg mt-2">
