@@ -1,7 +1,8 @@
 <div class="px-[25px] py-[20px] flex-1">
     <div>
         <div class="bg-white px-6 py-6 rounded-lg mt-2 grid">
-         
+                  <div data-v-c3a81764="" class="bloq-head"><h4 data-v-c3a81764="">Bonus Report</h4><a data-v-c3a81764="" href="/buy-ticket" class=""> Report <i data-v-c3a81764="" class="bx bx-chevron-right"></i></a></div>
+
             <form action="#" method="POST">
                 <div class="flex flex-wrap -mx-3 mt-3 items-end">
                     <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
