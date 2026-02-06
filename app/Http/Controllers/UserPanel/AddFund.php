@@ -27,28 +27,7 @@ return $this->dashboard_layout();
 public function fundHistory(Request $request)
 {
 
-    $user=Auth::user();
-    $limit = $request->limit ? $request->limit : paginationLimit();
-    $status = $request->status ? $request->status : null;
-    $search = $request->search ? $request->search : null;
-    $notes = CoinpaymentTransaction::where('buyer_name',$user->username);      
-    if($search <> null && $request->reset!="Reset"){
-    $notes = $notes->where(function($q) use($search){
-    $q->Where('buyer_name', 'LIKE', '%' . $search . '%')          
-    ->orWhere('txn_id', 'LIKE', '%' . $search . '%')
-    ->orWhere('address', 'LIKE', '%' . $search . '%')
-    ->orWhere('amount_total_fiat', 'LIKE', '%' . $search . '%')
-    ->orWhere('coin', 'LIKE', '%' . $search . '%');
-    });
-
-    }
-  $notes = $notes->paginate($limit)
-      ->appends([
-          'limit' => $limit
-      ]);
-
-$this->data['search'] =$search;
-$this->data['add_fund_report'] =$notes;
+  
 $this->data['page'] = 'user.fund.fundHistory';
 return $this->dashboard_layout();
 
