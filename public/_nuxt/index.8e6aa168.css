@@ -1,0 +1,33 @@
+.wallet-wra {
+    background-color: #0003;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999
+}
+
+.wallet-info-2 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 30px #0000000a;
+    height: auto;
+    left: 50%;
+    max-width: 200px;
+    padding: 15px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 1
+}
+
+@media (max-width:767.98px) {
+    .wallet-info-2 {
+        left: 50%;
+        position: fixed;
+        top: 50%;
+        transform: translate(-50%, -50%)
+    }
+}

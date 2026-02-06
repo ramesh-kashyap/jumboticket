@@ -1,0 +1,64 @@
+.bloq-head[data-v-c3a81764] {
+    align-items: center;
+    display: flex;
+    justify-content: space-between
+}
+
+.bloq-head h4[data-v-c3a81764] {
+    color: #111;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 7px;
+    position: relative;
+    text-transform: uppercase
+}
+
+.bloq-head h4[data-v-c3a81764]:before {
+    background-color: #bf953f;
+    content: "";
+    height: 3px;
+    position: absolute;
+    top: 0;
+    width: 40px
+}
+
+.bloq-head a[data-v-c3a81764] {
+    color: #bf953f;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+.bloq-head a[data-v-c3a81764],
+.bloq-head a i[data-v-c3a81764] {
+    align-items: center;
+    display: inline-flex
+}
+
+.bloq-head a i[data-v-c3a81764] {
+    background-color: #bf953f;
+    border-radius: 25px;
+    color: #111;
+    font-size: 16px;
+    height: 18px;
+    justify-content: center;
+    margin-left: 5px;
+    transition: all .2s ease;
+    width: 18px
+}
+
+.bloq-head a:hover i[data-v-c3a81764] {
+    background-color: #ecc762;
+    color: #111
+}
+
+@media (max-width:767.98px) {
+    .bloq-head[data-v-c3a81764] {
+        margin-bottom: 15px
+    }
+    .bloq-head[data-v-c3a81764],
+    .bloq-head h4[data-v-c3a81764] {
+        display: block
+    }
+}

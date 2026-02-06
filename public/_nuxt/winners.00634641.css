@@ -1,0 +1,319 @@
+.draw-card {
+    padding: 0 10px
+}
+
+.draw-card-box img {
+    border: 1px solid #bf953f;
+    border-radius: 8px;
+    margin-bottom: 18px;
+    width: 100%
+}
+
+.draw-card-box p {
+    color: #ecc762;
+    text-align: center
+}
+
+.slick-arrow {
+    border: 1px solid hsla(0, 0%, 100%, .01) !important;
+    border-radius: 50%;
+    color: #fff;
+    height: 40px;
+    opacity: .5;
+    overflow: hidden;
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    z-index: 1
+}
+
+.slick-prev {
+    left: -40px
+}
+
+.slick-prev:after {
+    background-color: #000;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23FFF' class='bi bi-chevron-left'%3E%3Cpath fill-rule='evenodd' d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    content: "";
+    display: block;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px
+}
+
+.slick-next {
+    right: -40px
+}
+
+.slick-next:after {
+    background-color: #000;
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23FFF' class='bi bi-chevron-right'%3E%3Cpath fill-rule='evenodd' d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E") !important;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+    content: "";
+    display: block;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px
+}
+
+.page-gap {
+    margin-top: 80px
+}
+
+.no-data {
+    background-color: #000;
+    padding: 15px;
+    text-align: center
+}
+
+.no-data p {
+    margin: 0
+}
+
+.dynamic-ad {
+    margin-top: 25px
+}
+
+.pty {
+    padding-bottom: 50px;
+    padding-top: 50px
+}
+
+.dy-ed {
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 15px 20px;
+    text-align: center
+}
+
+.dy-ed p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: uppercase
+}
+
+.winners {
+    background-color: #111;
+    padding-bottom: 40px;
+    padding-top: 40px
+}
+
+.winners-content h4 {
+    color: #bf953f;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.winners-content span {
+    color: #bf953f;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 13px
+}
+
+.winners-content a {
+    background-color: #bf953f;
+    border-radius: 8px;
+    color: #111;
+    display: inline-block;
+    font-weight: 600;
+    padding: 12px 20px;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .3s ease
+}
+
+.winners-content a:hover {
+    background-color: #ecc762
+}
+
+.winners-content p {
+    color: #fff
+}
+
+.dark-box {
+    background-color: #111;
+    padding-bottom: 50px;
+    padding-top: 50px
+}
+
+.dark-box__head {
+    text-align: center
+}
+
+.dark-box__head h3 {
+    color: #bf953f;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+    text-transform: uppercase
+}
+
+.dark-box__head h3:after {
+    background-color: #bf953f;
+    border-radius: 15px;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    top: 33px;
+    transform: translate(-50%);
+    width: 60px
+}
+
+.dark-box__head h4 {
+    color: #bf953f;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.dark-box__head-text {
+    display: flex;
+    justify-content: center
+}
+
+.dark-box__head-text p {
+    color: #fff;
+    display: block;
+    max-width: 680px
+}
+
+.watch-more-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px
+}
+
+.watch-more-btn a {
+    background-color: #bf953f;
+    border-radius: 10px;
+    color: #111 !important;
+    font-weight: 500;
+    margin-left: 12px;
+    padding: 10px 15px !important;
+    text-decoration: none;
+    transition: all .3s ease
+}
+
+.dark-card-wrap {
+    margin-top: 15px
+}
+
+.dark-card {
+    background-color: #111;
+    border-radius: 10px;
+    color: #bf953f;
+    padding: 35px 13px;
+    text-align: center
+}
+
+.dark-card img {
+    width: 70px
+}
+
+.dark-card p {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: uppercase
+}
+
+.dark-card p,
+.winner-tab {
+    margin-top: 15px
+}
+
+.winner-tab .nav {
+    border: none;
+    justify-content: center
+}
+
+.winner-tab .nav .nav-link.active,
+.winner-tab .nav .nav-tabs .nav-item.show .nav-link {
+    background-color: #bf953f;
+    color: #111;
+    position: relative
+}
+
+.winner-tab .nav .nav-link.active:after,
+.winner-tab .nav .nav-tabs .nav-item.show .nav-link:after {
+    background: #bf953f;
+    bottom: -5px;
+    content: "";
+    display: block;
+    height: 10px;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%) rotate(45deg);
+    width: 10px
+}
+
+.winner-tab .nav .nav-link {
+    border: none;
+    border-radius: 6px;
+    color: #bf953f;
+    font-weight: 600;
+    padding: 12px 20px;
+    text-transform: uppercase
+}
+
+.winner-tab .table .thead-dark th {
+    background-color: #bf953f
+}
+
+.winner-tab .tab-body {
+    margin-top: 40px
+}
+
+.winner-tab .tab-body .table {
+    color: #fff
+}
+
+.winner-tab .tab-body .table tr {
+    background-color: #111
+}
+
+.winner-tab .tab-body .table-striped tbody tr:nth-of-type(odd) {
+    background-color: #333
+}
+
+.winner-tab .tab-body .table td,
+.winner-tab .tab-body .table th {
+    border: none
+}
+
+.winner-tab .tab-body thead tr th {
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+.winner-tab .tab-body tbody tr th {
+    font-weight: 300
+}
+
+@media (max-width:1024px) {
+    .page-gap {
+        margin-top: 72px
+    }
+}

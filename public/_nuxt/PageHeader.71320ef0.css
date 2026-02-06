@@ -1,0 +1,69 @@
+.justify-content[data-v-d3cc34c6] {
+    justify-content: flex-end
+}
+
+.page-img[data-v-d3cc34c6] {
+    display: flex;
+    justify-content: center
+}
+
+.page-img img[data-v-d3cc34c6] {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 190px
+}
+
+.page-head[data-v-d3cc34c6] {
+    background-color: #000;
+    background-position: 50%;
+    background-size: cover;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    text-align: right
+}
+
+.page-head h1[data-v-d3cc34c6] {
+    color: #ecc762;
+    font-size: 44px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.page-head p[data-v-d3cc34c6] {
+    color: #fff
+}
+
+.page-head ul[data-v-d3cc34c6] {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.page-head ul li[data-v-d3cc34c6] {
+    color: #ecc762;
+    display: inline-block;
+    font-weight: 400;
+    margin-right: 8px
+}
+
+.page-head ul li a[data-v-d3cc34c6] {
+    color: #ecc762;
+    font-weight: 600
+}
+
+.page-head ul li i[data-v-d3cc34c6] {
+    font-size: 12px
+}
+
+@media (max-width:992.98px) {
+    .page-head h1[data-v-d3cc34c6] {
+        font-size: 30px
+    }
+    .justify-content[data-v-d3cc34c6] {
+        justify-content: center
+    }
+    .page-head[data-v-d3cc34c6] {
+        background-position: top right 16%;
+        text-align: center
+    }
+}
