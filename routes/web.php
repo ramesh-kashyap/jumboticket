@@ -112,6 +112,8 @@ Route::post('/change-trxpasswword', [App\Http\Controllers\UserPanel\Profile::cla
 Route::get('/AddFund', [App\Http\Controllers\UserPanel\AddFund::class, 'index'])->name('user.AddFund');
 Route::get('/fundHistory', [App\Http\Controllers\UserPanel\AddFund::class, 'fundHistory'])->name('user.fundHistory');
 Route::any('/SubmitBuyFund', [App\Http\Controllers\UserPanel\AddFund::class, 'SubmitBuyFund'])->name('user.SubmitBuyFund');
+Route::get('/ConfirmAddFund', [App\Http\Controllers\UserPanel\AddFund::class, 'ConfirmAddFund'])->name('user.ConfirmAddFund');
+
 // end add fund
 
 // invest
