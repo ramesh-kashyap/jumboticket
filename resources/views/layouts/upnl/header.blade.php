@@ -1757,7 +1757,7 @@
                                                 </li>
                                                 <li class="menu__list">
                                                     <a
-                                                        href="/user/buy-ticket.html"
+                                                        href="{{route('user.fundHistory')}}"
                                                         class="menu__link text-darkblue-400"><span
                                                             class="menu__link-icon relative"><i
                                                                 class="bx bxs-notepad"></i><i
@@ -1798,7 +1798,7 @@
                                                 </li>
                                                   <li class="menu__list">
                                                     <a
-                                                        href="{{route('user.reward-bonus')}}"
+                                                        href="{{route('user.referral-team')}}"
                                                         class="menu__link text-darkblue-400"><span
                                                             class="menu__link-icon relative"><i
                                                                 class="bx bxs-group"></i><i
