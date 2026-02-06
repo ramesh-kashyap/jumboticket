@@ -213,94 +213,152 @@ if ($allResult)
 }
 
 
-
-
 public function generate_roi()
 {
+    $allResult = Investment::where('status', 'Active')
+        ->where('roiCandition', 0)
+        ->get();
 
-$allResult=Investment::where('status','Active')->where('roiCandition',0)->get();
-$todays=Date("Y-m-d");
-$day=Date("l");
+    $today = date("Y-m-d");
 
-if ($allResult)
+    foreach ($allResult as $value) {
+
+        $userID = $value->user_id;
+        $joining_amt = $value->amount;
+
+        $userDetails = User::where('id', $userID)
+            ->where('active_status', 'Active')
+            ->first();
+
+        if (!$userDetails) {
+            continue;
+        }
+
+        if ($joining_amt >= 20 && $joining_amt <= 500) {
+            $percent = 0.75;
+        } elseif ($joining_amt >= 501 && $joining_amt <= 1000) {
+            $percent = 0.9;
+        } elseif ($joining_amt >= 1001 && $joining_amt <= 3000) {
+            $percent = 1;
+        } elseif ($joining_amt >= 3001 && $joining_amt <= 8000) {
+            $percent = 1.5;
+        } elseif ($joining_amt >= 8001 && $joining_amt <= 20000) {
+            $percent = 1.75;
+        } elseif ($joining_amt >= 20001 && $joining_amt <= 100000) {
+            $percent = 2;
+        } else {
+            $percent = 0;
+        }
+
+        if ($percent <= 0) {
+            continue;
+        }
+
+        $roi = ($joining_amt * $percent) / 100;
+
+        $data = [
+            'remarks' => 'ROI Income',
+            'comm' => $roi,
+            'amt' => $joining_amt,
+            'invest_id' => $value->id,
+            'level' => 0,
+            'ttime' => $today,
+            'user_id_fk' => $userDetails->username,
+            'user_id' => $userDetails->id,
+        ];
+
+        Income::firstOrCreate(
+            [
+                'remarks' => 'ROI Income',
+                'ttime' => $today,
+                'user_id' => $userID,
+                'invest_id' => $value->id
+            ],
+            $data
+        );
+    }
+}
+
+
+public function generate_arbitrage_roi()
 {
+    $today = date("Y-m-d");
 
- foreach ($allResult as $key => $value)
- {
+    $investments = Investment::where('status', 'Active')
+        ->where('roiCandition', 0)
+        ->get();
 
-  $userID=$value->user_id;
-   $joining_amt = $value->amount;
-   $plan = $value->plan;
-   $startDate = $value->sdate;
+    foreach ($investments as $value) {
 
-  $userDetails=User::where('id',$userID)->where('active_status','Active')->first();
-  $today=date("Y-m-d");
-   $previous_date =date('Y-m-d',(strtotime ( '-1 day' , strtotime ( $today) ) ));
+        $user = User::where('id', $value->user_id)
+            ->where('active_status', 'Active')
+            ->first();
 
-  if ($userDetails)
-  {
-     
-     
-        $total_get=$joining_amt*200/100;
-        $total_profit_b = Income::where('user_id', $userID)->sum('comm');
-        $total_profit=($total_profit_b)?$total_profit_b:0;
-   
-          $percent= 2.5;
-        
-          if ($joining_amt>=50 && $joining_amt<=800) 
-           {
-            $percent= 2.5;
-           }
-           elseif($joining_amt>=1000 && $joining_amt<=5000)
-           {
-            $percent= 3;
-           }
-         
+        if (!$user) {
+            continue;
+        }
+
+        $amount = $value->amount;
+        $startDate = $value->sdate;
+
+        $totalDays = (strtotime($today) - strtotime($startDate)) / (60 * 60 * 24);
+
+        if ($totalDays >= 120) {
+
            
-       
-       $roi = ($joining_amt*$percent/100);
 
-       $max_income=$total_get;
-       $n_m_t = $max_income - $total_profit;
-       // dd($total_received);
-         if($roi >= $n_m_t)
-         {
-             $roi = $n_m_t;
-         }  
-       
-      if ($roi>0)
-      {
+            Investment::where('id', $value->id)->update([
+                'roiCandition' => 1,
+                'status' => 'Completed'
+            ]);
 
-        echo "ID:".$userDetails->username." Package:".$joining_amt." Roi:".$roi."<br>";
-         $data['remarks'] = 'Order Revenue';
-        $data['comm'] = $roi;
-        $data['amt'] = $joining_amt;
-        $data['invest_id']=$value->id;
-        $data['level']=0;
-        $data['ttime'] = date("Y-m-d");
-        $data['user_id_fk'] = $userDetails->username;
-        $data['user_id']=$userDetails->id;
-       $income = Income::firstOrCreate(['remarks' => 'Order Revenue','ttime'=>date("Y-m-d"),'user_id'=>$userID,'invest_id'=>$value->id],$data);
-       add_leadership_bonus($userDetails->id,$roi);
-      }
-      else
-      {
-      Investment::where('id',$value->id)->update(['roiCandition' => 1]);
-      }
-      
+            continue;
+        }
 
-  }
+        if ($amount >= 50 && $amount <= 999) {
+            $percent = 1.8;
+        } elseif ($amount >= 1001 && $amount <= 3000) {
+            $percent = 2.1;
+        } elseif ($amount >= 3001 && $amount <= 8000) {
+            $percent = 2.5;
+        } elseif ($amount >= 8001 && $amount <= 20000) {
+            $percent = 3;
+        } elseif ($amount >= 20001 && $amount <= 100000) {
+            $percent = 3.5;
+        } elseif ($amount >= 100001 && $amount <= 200000) {
+            $percent = 4.1;
+        } else {
+            $percent = 0;
+        }
 
- }
- 
+        if ($percent <= 0) {
+            continue;
+        }
+
+        $roi = ($amount * $percent) / 100;
+
+        $data = [
+            'remarks' => 'Arbitrage ROI',
+            'comm' => $roi,
+            'amt' => $amount,
+            'invest_id' => $value->id,
+            'level' => 0,
+            'ttime' => $today,
+            'user_id_fk' => $user->username,
+            'user_id' => $user->id,
+        ];
+
+        Income::firstOrCreate(
+            [
+                'remarks' => 'Arbitrage ROI',
+                'ttime' => $today,
+                'user_id' => $user->id,
+                'invest_id' => $value->id
+            ],
+            $data
+        );
+    }
 }
-
-
-
-
-}
-
-
 
 
 public function generate_compounded_roi()
