@@ -11,7 +11,7 @@
                         <i class="fas fa-bars"></i>
                     </button>
 
-                    <span class="navbar-brand text-capitalize text-white mb-0 h1 d-none d-sm-inline-block">security</span>
+                    <span class="na vbar-brand text-capitalize text-white mb-0 h1 d-none d-sm-inline-block">security</span>
 
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mb-0 dropdown">
