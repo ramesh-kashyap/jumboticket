@@ -1728,148 +1728,7 @@
                                                     <ul
                                                         class="menu-closed"></ul>
                                                 </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/buy-ticket.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-notepad"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Buy
-                                                            Ticket</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="../user/ticket-history.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-bookmark-alt"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Ticket
-                                                            History</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/winning.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-medal"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">My
-                                                            Winnings</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/network.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-group"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">My
-                                                            Network</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        aria-current="page"
-                                                        href="/user/package-purchase.html"
-                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-collection"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Package
-                                                            Purchase</span><span
-                                                            class="angle-arrow invisible opacity-0 showarrow"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed sub-menu">
-                                                        <li>
-                                                            <a
-                                                                href="/user/daily-rewards"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Daily
-                                                                Rewards</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/user/instant-bonus"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Instant
-                                                                Bonus
-                                                                (Lottery)</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/deposit.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-wallet"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Deposit</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/fund-transfer.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-credit-card"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Transfer
-                                                            Fund</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/withdraw-fund.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-wallet-alt"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Withdraw
-                                                            Fund</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="/user/rewards.html"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-trophy"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Ranks
-                                                            and
-                                                            Rewards</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
+                                                 <li class="menu__list">
                                                     <a
                                                         href="{{route('user.profile')}}"
                                                         class="menu__link text-darkblue-400"><span
@@ -1884,94 +1743,89 @@
                                                 </li>
                                                 <li class="menu__list">
                                                     <a
-                                                        aria-current="page"
-                                                        href="/user/reports.html"
-                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400"><span
+                                                        href="{{route('user.AddFund')}}"
+                                                        class="menu__link text-darkblue-400"><span
                                                             class="menu__link-icon relative"><i
-                                                                class="bx bxs-collection"></i><i
+                                                                class="bx bxs-notepad"></i><i
                                                                 class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Reports</span><span
-                                                            class="angle-arrow invisible opacity-0 showarrow"><i
+                                                            class="menu__txt">Add Fund
+                                                            </span><span
+                                                            class="angle-arrow invisible opacity-0"><i
                                                                 class="bx bx-chevron-left"></i></span></a>
                                                     <ul
-                                                        class="menu-closed sub-menu">
-                                                        <li>
-                                                            <a
-                                                                href="/reports/wallet-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Wallet
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/referral-income-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Referral
-                                                                Income
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/track-referral-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Track
-                                                                Referral
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/deposit-fund-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Deposit
-                                                                Fund
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/network-income-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Network
-                                                                Income
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/my-network-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">My
-                                                                Network
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/purchasepackagereport"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Package
-                                                                Purchase
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/daily-rewards-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Daily
-                                                                Rewards
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/withdraw-fund/withdrawal-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Withdrawal
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/downline-fund-deposit-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Downline
-                                                                Fund Deposit
-                                                                Report</a>
-                                                        </li>
-                                                        <li>
-                                                            <a
-                                                                href="/reports/principal-return-report"
-                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">Principal
-                                                                Return
-                                                                Report</a>
-                                                        </li>
-                                                    </ul>
+                                                        class="menu-closed"></ul>
                                                 </li>
+                                                <li class="menu__list">
+                                                    <a
+                                                        href="/user/buy-ticket.html"
+                                                        class="menu__link text-darkblue-400"><span
+                                                            class="menu__link-icon relative"><i
+                                                                class="bx bxs-notepad"></i><i
+                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
+                                                            class="menu__txt">Add Fund History
+                                                            </span><span
+                                                            class="angle-arrow invisible opacity-0"><i
+                                                                class="bx bx-chevron-left"></i></span></a>
+                                                    <ul
+                                                        class="menu-closed"></ul>
+                                                </li>
+                                                <li class="menu__list">
+                                                    <a
+                                                        href="../user/ticket-history.html"
+                                                        class="menu__link text-darkblue-400"><span
+                                                            class="menu__link-icon relative"><i
+                                                                class="bx bxs-bookmark-alt"></i><i
+                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
+                                                            class="menu__txt">Deposit</span><span
+                                                            class="angle-arrow invisible opacity-0"><i
+                                                                class="bx bx-chevron-left"></i></span></a>
+                                                    <ul
+                                                        class="menu-closed"></ul>
+                                                </li>
+                                                <li class="menu__list">
+                                                    <a
+                                                        href="/user/buy-ticket.html"
+                                                        class="menu__link text-darkblue-400"><span
+                                                            class="menu__link-icon relative"><i
+                                                                class="bx bxs-notepad"></i><i
+                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
+                                                            class="menu__txt">Deposit History
+                                                            </span><span
+                                                            class="angle-arrow invisible opacity-0"><i
+                                                                class="bx bx-chevron-left"></i></span></a>
+                                                    <ul
+                                                        class="menu-closed"></ul>
+                                                </li>
+                                                  <li class="menu__list">
+                                                    <a
+                                                        href="{{route('user.reward-bonus')}}"
+                                                        class="menu__link text-darkblue-400"><span
+                                                            class="menu__link-icon relative"><i
+                                                                class="bx bxs-group"></i><i
+                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
+                                                            class="menu__txt">My
+                                                            Network</span><span
+                                                            class="angle-arrow invisible opacity-0"><i
+                                                                class="bx bx-chevron-left"></i></span></a>
+                                                    <ul
+                                                        class="menu-closed"></ul>
+                                                </li>
+                                                <li class="menu__list">
+                                                    <a
+                                                        href="{{route('user.matching-bonus')}}"
+                                                        class="menu__link text-darkblue-400"><span
+                                                            class="menu__link-icon relative"><i
+                                                                class="bx bxs-medal"></i><i
+                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
+                                                            class="menu__txt">Profit Summary</span><span
+                                                            class="angle-arrow invisible opacity-0"><i
+                                                                class="bx bx-chevron-left"></i></span></a>
+                                                    <ul
+                                                        class="menu-closed"></ul>
+                                                </li>
+                                              
+                                            
+                                              
                                                 <li class="menu__list">
                                                     <a
                                                         href="/user/marketing.html"
@@ -1979,27 +1833,13 @@
                                                             class="menu__link-icon relative"><i
                                                                 class="bx bxs-category-alt"></i><i
                                                                 class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Marketing
-                                                            Tools</span><span
+                                                            class="menu__txt">Logout</span><span
                                                             class="angle-arrow invisible opacity-0"><i
                                                                 class="bx bx-chevron-left"></i></span></a>
                                                     <ul
                                                         class="menu-closed"></ul>
                                                 </li>
-                                                <!-- <li class="menu__list">
-                                                        <a
-                                                            href="/collaboration"
-                                                            class="menu__link text-darkblue-400"><span
-                                                                class="menu__link-icon relative"><i
-                                                                    class="fas fa-handshake"></i><i
-                                                                    class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                                class="menu__txt">Collaboration
-                                                            </span><span
-                                                                class="angle-arrow invisible opacity-0"><i
-                                                                    class="bx bx-chevron-left"></i></span></a>
-                                                        <ul
-                                                            class="menu-closed"></ul>
-                                                    </li> -->
+                                               
                                             </ul>
                                         </nav>
                                     </div>
