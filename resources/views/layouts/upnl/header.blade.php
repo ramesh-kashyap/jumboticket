@@ -39,16 +39,7 @@
         crossorigin
         href="{{asset('')}}_nuxt/entry.baa6724e.js" />
     <link rel="preload" as="style" href="{{asset('')}}_nuxt/entry.d6e76b01.css" />
-    <link
-        rel="prefetch"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/auth.86ac625e.js" />
-    <link
-        rel="prefetch"
-        as="script"
-        crossorigin
-        href=".{{asset('')}}_nuxt/auth.5fc731a5.js" />
+
     <link rel="prefetch" as="style" href="{{asset('')}}_nuxt/error.fa414541.css" />
     <link
         rel="prefetch"
@@ -77,19 +68,10 @@
         as="script"
         crossorigin
         href="{{asset('')}}_nuxt/register.89cb8348.js" />
-    <link
-        rel="prefetch"
-        as="script"
-        crossorigin
-        href=".{{asset('')}}_nuxt/store.669f290b.js" />
-    <link
-        rel="prefetch"
-        as="script"
-        crossorigin
-        href=".{{asset('')}}_nuxt/parentcomponent.906631da.js" />
-    <link rel="prefetch" as="style" href=".{{asset('')}}_nuxt/userpanel.e94e3565.css" />
-    <link rel="prefetch" as="style" href=".{{asset('')}}_nuxt/style.e6c195f4.css" />
-    <link rel="prefetch" as="style" href=".{{asset('')}}_nuxt/countDown.410169d3.css" />
+
+
+    <link rel="prefetch" as="style" href="{{asset('')}}_nuxt/userpanel.e94e3565.css" />
+    <link rel="prefetch" as="style" href="{{asset('')}}_nuxt/style.e6c195f4.css" />
     <link
         rel="prefetch"
         as="script"
@@ -128,34 +110,8 @@
         crossorigin
         href="{{asset('')}}_nuxt/error-500.9c810e9c.js" />
     <link rel="stylesheet" href="{{asset('')}}_nuxt/entry.d6e76b01.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/sign-up.b4d5ee94.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/resendOTP.c6d4078e.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/message.2a8bf91d.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/firebasesmsverification.50d35a34.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/index-dd468b12.cb5ad844.js" />
-    <link
-        rel="stylesheet"
-        href="{{asset('')}}_nuxt/sign-up.ac8ed205.css" />
+
+
     <style type="text/css">
         button.btn[data-v-2b23e28f] {
             display: inline-block;
@@ -1446,11 +1402,11 @@
             display: none !important;
         }
     </style>
-    <script
+    <!-- <script
         type="text/javascript"
         src=".//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         defer
-        data-loaded="true"></script>
+        data-loaded="true"></script> -->
     <link
         type="text/css"
         rel="stylesheet"
@@ -1500,24 +1456,11 @@
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/index.8e6aa168.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/my-winnings.23ea52da.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/my-network.fab87f98.js" />
+
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/my-network.4b5f3ed2.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/deposit.b10a156e.js" />
+
     <link
         rel="modulepreload"
         as="script"
@@ -1534,19 +1477,11 @@
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/flag-icons.479d90f9.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/transfer-fund.46fa4dfd.js" />
+
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/transfer-fund.033dc90a.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/notifications.e35697fa.js" />
+
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/notifications.4ef7ea7a.css" />
@@ -1558,71 +1493,19 @@
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/_slug_.9696280b.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/request-withdrawal.831a7ebf.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/withdrawFund.f7910de4.js" />
+
+
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/request-withdrawal.ec334528.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/wallet-report.c006be24.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/flatpickr.112cde07.js" />
-    <link
-        rel="stylesheet"
-        href="{{asset('')}}_nuxt/flatpickr.299ba9cf.css" />
+
     <link
         rel="stylesheet"
         href="{{asset('')}}_nuxt/wallet-report.cad7bcd4.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/daily-rewards.566b47c0.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/purchasePackage.1f23c2be.js" />
-    <link
-        rel="stylesheet"
-        href="{{asset('')}}_nuxt/daily-rewards.c4a0b140.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/referral-income-report.ce503833.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/marketing-tools.b1820b70.js" />
-    <link
-        rel="stylesheet"
-        href="{{asset('')}}_nuxt/marketing-tools.524bc1f6.css" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/ranks-and-rewards.88f7b362.js" />
-    <link
-        rel="modulepreload"
-        as="script"
-        crossorigin
-        href="{{asset('')}}_nuxt/collaboration.d26e78f8.js" />
+
+
+
+
 </head>
 
 <body
@@ -1707,198 +1590,205 @@
                             </div>
                             <div class="scrollbar__wrapper">
                                 <div class="scrollbar__scroller">
-                                    <div
-                                        class="scrollbar__content scrollbar__content--vertical">
-                                        <nav class="sidebar"
-                                            id="main-menu-wrapper">
-                                            <ul
-                                                class="sidebar__menu wraplist"
-                                                style="height: auto">
-                                                <li class="menu__list">
-                                                    <a
-                                                        aria-current="page"
-                                                        href="{{route('user.dashboard')}}"
-                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400 link-active"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-store-alt"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Dashboard</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.profile')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-crown"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Profile</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.AddFund')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-notepad"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Add Fund
-                                                        </span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.fundHistory')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-notepad"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Add Fund History
-                                                        </span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.deposit')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-bookmark-alt"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Deposit</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.DepositHistory')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-notepad"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Deposit History
-                                                        </span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.referral-team')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-group"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">My
-                                                            Network</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
-                                                <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.Withdraw')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-medal"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Withdraw</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
-                                                </li>
+                                    <div class="scrollbar__content scrollbar__content--vertical">
+                                        <nav class="sidebar" id="main-menu-wrapper">
+                                            <ul class="sidebar__menu wraplist" style="height: auto">
 
                                                 <li class="menu__list">
-                                                    <a
-                                                        href="{{route('user.matching-bonus')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-medal"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Profit Summary</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
+                                                    <a aria-current="page" href="{{route('user.dashboard')}}"
+                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400 link-active">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-store-alt"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Dashboard</span>
+                                                        <span class="angle-arrow invisible opacity-0">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="menu-closed"></ul>
+                                                </li>
+                                                <li class="menu__list">
+                                                    <a href="{{route('user.profile')}}"
+                                                        class="menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-crown"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Profile</span>
+                                                        <span class="angle-arrow invisible opacity-0">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="menu-closed"></ul>
+                                                </li>
+
+                                                <li class="menu__list open">
+                                                    <a aria-current="page" href="/buy-ticket/2#reports"
+                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-collection"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Add Fund</span>
+                                                        <span class="angle-arrow invisible opacity-0 showarrow">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+
+                                                    <ul class="menu-closed sub-menu" style="display:none;">
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Add Fund
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                AddFund History
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu__list open">
+                                                    <a aria-current="page" href="/buy-ticket/2#reports"
+                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-collection"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Deposit</span>
+                                                        <span class="angle-arrow invisible opacity-0 showarrow">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+
+                                                    <ul class="menu-closed sub-menu" style="display:none;">
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Deposit
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Deposit History
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu__list open">
+                                                    <a aria-current="page" href="/buy-ticket/2#reports"
+                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-collection"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Profit Summary</span>
+                                                        <span class="angle-arrow invisible opacity-0 showarrow">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+
+                                                    <ul class="menu-closed sub-menu" style="display:none;">
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Level Income
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Direct Income
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li class="menu__list open">
+                                                    <a aria-current="page" href="/buy-ticket/2#reports"
+                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-collection"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">My Network</span>
+                                                        <span class="angle-arrow invisible opacity-0 showarrow">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+
+                                                    <ul class="menu-closed sub-menu" style="display:none;">
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Direct Team
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Level Team
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+
+                                                <li class="menu__list open">
+                                                    <a aria-current="page" href="/buy-ticket/2#reports"
+                                                        class="router-link-active router-link-exact-active menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-collection"></i>
+                                                            <i class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Withdrawal</span>
+                                                        <span class="angle-arrow invisible opacity-0 showarrow">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+
+                                                    <ul class="menu-closed sub-menu" style="display:none;">
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Withdrawal
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="/reports/wallet-report"
+                                                                class="dropd-links p-2 pl-6 block text-darkblue-400 hover:text-white transition-all">
+                                                                Withdrawal History
+                                                            </a>
+                                                        </li>
+                                                    </ul>
                                                 </li>
 
 
-
                                                 <li class="menu__list">
-                                                    <a
-                                                        href="{{route('logout')}}"
-                                                        class="menu__link text-darkblue-400"><span
-                                                            class="menu__link-icon relative"><i
-                                                                class="bx bxs-category-alt"></i><i
-                                                                class="indicator absolute top-0 left-0 w-2 h-2 bg-red-500 -translate-y-1 -translate-x-1 rounded-full hidden"></i></span><span
-                                                            class="menu__txt">Logout</span><span
-                                                            class="angle-arrow invisible opacity-0"><i
-                                                                class="bx bx-chevron-left"></i></span></a>
-                                                    <ul
-                                                        class="menu-closed"></ul>
+                                                    <a href="{{route('logout')}}"
+                                                        class="menu__link text-darkblue-400">
+                                                        <span class="menu__link-icon relative">
+                                                            <i class="bx bxs-category-alt"></i>
+                                                        </span>
+                                                        <span class="menu__txt">Logout</span>
+                                                        <span class="angle-arrow invisible opacity-0">
+                                                            <i class="bx bx-chevron-left"></i>
+                                                        </span>
+                                                    </a>
+                                                    <ul class="menu-closed"></ul>
                                                 </li>
 
                                             </ul>
                                         </nav>
                                     </div>
                                 </div>
-                                <div
-                                    class="scrollbar__thumbPlaceholder scrollbar__thumbPlaceholder--horizontal scrollbar__thumbPlaceholder--autoHide scrollbar__thumbPlaceholder--autoExpand"
-                                    style="
-                      width: 0px;
-                      position: absolute;
-                      left: 3px;
-                      transform: translate3d(0px, 0px, 0px);
-                      display: none;
-                    ">
-                                    <div
-                                        class="scrollbar__thumb scrollbar__thumb--horizontal"></div>
-                                </div>
-                                <!---->
-                                <div
-                                    class="scrollbar__thumbPlaceholder scrollbar__thumbPlaceholder--vertical scrollbar__thumbPlaceholder--autoHide scrollbar__thumbPlaceholder--autoExpand"
-                                    style="
-                      height: 172.101px;
-                      position: absolute;
-                      top: 3px;
-                      transform: translate3d(0px, 0px, 0px);
-                    ">
-                                    <div
-                                        class="scrollbar__thumb scrollbar__thumb--vertical"></div>
-                                </div>
-                                <!---->
                             </div>
+
+
                         </div>
-                        <!-- <div class="flex-none bottom-s-obj">
-                                <div
-                                    class="pr-[25px] pl-[25px] pb-5 transition timebar">
-                                    <span
-                                        class="uppercase text-[12px] opacity-60"><i
-                                            class="bx bx-time-five mr-1"></i>
-                                        Server Time: </span><span
-                                        class="flex items-center text-[12px] text-[#ecc762]"><p
-                                            id="server-time"
-                                            class="font-semibold">
-                                            Feb 4, 2026, 1:58:02 AM
-                                        </p></span>
-                                </div>
-                            </div> -->
+
                     </div>
                 </div>
                 <div class="flex flex-1 space-x-6">
@@ -1910,7 +1800,7 @@
                                 <div class="topbar__left">
                                     <div
                                         class="block lg:flex items-center hd-timer">
-                                        
+
                                         <!-- <div class="timer text-center lg:text-left">
                                             <div>
                                                 <div class="day">
@@ -1937,12 +1827,12 @@
                                             <h4
                                                 class="uppercase font-semibold">
                                                 Dashboard</h4>
-                                        </div> 
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="topbar__right">
                                     <ul class="user-nav">
-                                      <li class="main-nav-item">
+                                        <li class="main-nav-item">
                                             <a href="#"
                                                 class="main-nav-btn">Deposit</a>
                                         </li>
@@ -1964,60 +1854,84 @@
 
                                                     <li class="main-subnav__link"><a href="{{ route('user.referral-team') }}" class=""><i class="bx bx-group"></i> My Network</a></li>
                                                 </div>
-                                             
+
                                                 <div class="drop__bottom">
                                                     <form action="{{ route('logout') }}" method="POST"><button type="submit" class="main-subnav__link logoutlink"><i class="bx bx-log-in-circle"></i> Logout </button></form>
                                                 </div>
                                             </ul>
                                         </li>
-                                    
+
 
                                     </ul>
 
                                 </div>
                             </div>
-
                             <script>
-                                // 🎯 SET TARGET DATE (YYYY-MM-DD HH:MM:SS)
-                                const targetDate = "2026-02-10 23:59:59";
+                                document.addEventListener("DOMContentLoaded", function() {
 
-                                function getISTTime() {
-                                    const now = new Date();
-                                    const istOffset = 5.5 * 60 * 60 * 1000;
-                                    const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-                                    return new Date(utc + istOffset);
-                                }
+                                    document.querySelectorAll(".menu__list > a").forEach(function(link) {
 
-                                function startCountdown() {
-                                    const target = new Date(targetDate.replace(" ", "T"));
+                                        var li = link.parentElement;
+                                        var subMenu = li.querySelector(".sub-menu");
+                                        var arrow = link.querySelector(".angle-arrow i");
 
-                                    setInterval(() => {
-                                        const nowIST = getISTTime();
-                                        const diff = target - nowIST;
+                                        if (!subMenu) return;
 
-                                        if (diff <= 0) {
-                                            document.getElementById("days").innerText = "00";
-                                            document.getElementById("hours").innerText = "00";
-                                            document.getElementById("minutes").innerText = "00";
-                                            document.getElementById("seconds").innerText = "00";
-                                            return;
+                                        // Smooth animation setup
+                                        subMenu.style.overflow = "hidden";
+                                        subMenu.style.transition = "height 0.35s ease, opacity 0.3s ease";
+                                        if (arrow) arrow.style.transition = "transform 0.3s ease";
+
+                                        // Initial state
+                                        if (subMenu.style.display === "block") {
+                                            subMenu.style.height = subMenu.scrollHeight + "px";
+                                            subMenu.style.opacity = "1";
+                                            if (arrow) arrow.style.transform = "rotate(-90deg)";
+                                        } else {
+                                            subMenu.style.display = "none";
+                                            subMenu.style.height = "0px";
+                                            subMenu.style.opacity = "0";
                                         }
 
-                                        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                                        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-                                        const minutes = Math.floor((diff / (1000 * 60)) % 60);
-                                        const seconds = Math.floor((diff / 1000) % 60);
+                                        link.addEventListener("click", function(e) {
+                                            e.preventDefault();
 
-                                        document.getElementById("days").innerText = String(days).padStart(2, "0");
-                                        document.getElementById("hours").innerText = String(hours).padStart(2, "0");
-                                        document.getElementById("minutes").innerText = String(minutes).padStart(2, "0");
-                                        document.getElementById("seconds").innerText = String(seconds).padStart(2, "0");
+                                            // Close other submenus
+                                            document.querySelectorAll(".sub-menu").forEach(function(menu) {
+                                                if (menu !== subMenu) {
+                                                    menu.style.height = "0px";
+                                                    menu.style.opacity = "0";
+                                                    setTimeout(() => menu.style.display = "none", 300);
+                                                }
+                                            });
 
-                                    }, 1000);
-                                }
+                                            document.querySelectorAll(".angle-arrow i").forEach(function(ic) {
+                                                if (ic !== arrow) ic.style.transform = "rotate(0deg)";
+                                            });
 
-                                startCountdown();
+                                            // Toggle current submenu
+                                            if (subMenu.style.display === "block") {
+                                                subMenu.style.height = "0px";
+                                                subMenu.style.opacity = "0";
+                                                if (arrow) arrow.style.transform = "rotate(0deg)";
+                                                setTimeout(() => subMenu.style.display = "none", 300);
+                                            } else {
+                                                subMenu.style.display = "block";
+                                                subMenu.style.height = "0px";
+                                                subMenu.style.opacity = "0";
+                                                setTimeout(function() {
+                                                    subMenu.style.height = subMenu.scrollHeight + "px";
+                                                    subMenu.style.opacity = "1";
+                                                }, 10);
+                                                if (arrow) arrow.style.transform = "rotate(-90deg)";
+                                            }
+                                        });
+
+                                    });
+
+                                });
                             </script>
+
                             <script>
                                 const sidebar = document.getElementById("sidebar");
                                 const menuBtn = document.getElementById("menuBtn");
@@ -2040,17 +1954,17 @@
                                     }
                                 });
                             </script>
-    <script>
-                                            const btn = document.querySelector(".profile-btn");
-                                            const dropdown = document.querySelector(".main-nav-item__dropdown");
+                            <script>
+                                const btn = document.querySelector(".profile-btn");
+                                const dropdown = document.querySelector(".main-nav-item__dropdown");
 
-                                            dropdown.style.display = "none";
+                                dropdown.style.display = "none";
 
-                                            btn.onclick = () => {
-                                                dropdown.style.display =
-                                                    dropdown.style.display === "block" ? "none" : "block";
-                                            };
-                                        </script>
+                                btn.onclick = () => {
+                                    dropdown.style.display =
+                                        dropdown.style.display === "block" ? "none" : "block";
+                                };
+                            </script>
                             <style>
                                 #sidebar {
                                     position: fixed;
