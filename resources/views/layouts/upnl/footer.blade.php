@@ -1,3 +1,4 @@
+@include('partials.notify')
 
                             
                             <div data-v-676b993c class="flex-none">

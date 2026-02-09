@@ -238,7 +238,6 @@ class WithdrawRequest extends Controller
 
     }
 
-
     public function WithdrawHistory(Request $request){
 
         $user=Auth::user();

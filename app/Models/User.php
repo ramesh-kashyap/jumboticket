@@ -53,9 +53,9 @@ class User extends Authenticatable
     } 
 
 
-    public function FundBalance()
+public function FundBalance()
     {
-    $balance = Auth::user()->buy_fundAmt->sum('amount_total_fiat')-(Auth::user()->buy_packageAmt());
+    $balance = 0;
     return $balance;
     } 
 

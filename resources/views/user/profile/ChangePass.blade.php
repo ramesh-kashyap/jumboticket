@@ -45,12 +45,8 @@
                           <div class="prof-head"><h4>Change Password</h4></div>
                           <div><button id="sign-up-button"></button></div>
                           <!---->
-                          <form action="#" method="POST">
-                            <input
-                              type="hidden"
-                              name="_name_"
-                              value="loginpasswordreset"
-                            />
+                           <form action="{{ route('user.edit-password') }}" method="POST">
+                                     {{ csrf_field() }}
                             <div class="mb-2 mt-5">
                               <label
                                 for=""
@@ -58,16 +54,13 @@
                                 >Old Password*</label
                               >
                               <div class="relative">
-                                <input
-                                  type="password"
-                                  placeholder="Enter Old Password"
-                                  class="w-full h-[45px] rounded-lg border border-[#ECC762] bg-gray-100"
-                                /><span
+                                   <input        class="w-full h-[45px] rounded-lg border border-[#ECC762] bg-gray-100"  id="inputEmail3" placeholder="Old password" type="password" name="old_password">
+                                <!-- <span
                                   class="cursor-pointer absolute top-[50%] right-[5px] translate-y-[-50%] border-none bg-transparent"
                                   type="password"
                                   ><i class="show-eye bi bi-eye"></i
                                   ><i class="hide-eye bi bi-eye-slash"></i
-                                ></span>
+                                ></span> -->
                               </div>
                               <p
                                 class="text-red-600 font-medium block mt-[5px]"
@@ -80,16 +73,14 @@
                                 >New Password*</label
                               >
                               <div class="relative">
-                                <input
-                                  type="password"
-                                  placeholder="Enter New Password"
-                                  class="w-full h-[45px] rounded-lg border border-[#ECC762] bg-gray-100"
-                                /><span
+                                    <input  class="w-full h-[45px] rounded-lg border border-[#ECC762] bg-gray-100"  id="inputEmail3" placeholder="New password" type="password" name="password">
+                                
+                                <!-- <span
                                   class="cursor-pointer absolute top-[50%] right-[5px] translate-y-[-50%] border-none bg-transparent"
                                   type="password"
                                   ><i class="show-eye bi bi-eye"></i
                                   ><i class="hide-eye bi bi-eye-slash"></i
-                                ></span>
+                                ></span> -->
                               </div>
                               <p
                                 class="text-red-600 font-medium block mt-[5px]"
@@ -102,16 +93,14 @@
                                 >Repeat Password*</label
                               >
                               <div class="relative">
-                                <input
-                                  type="password"
-                                  placeholder="Repeat Password"
-                                  class="w-full h-[45px] rounded-lg border border-[#ECC762] bg-gray-100"
-                                /><span
+                                  <input  class="w-full h-[45px] rounded-lg border border-[#ECC762] bg-gray-100"  id="inputEmail3" placeholder="Retype New password" type="password" name="password_confirmation">
+                                
+                                <!-- <span
                                   class="cursor-pointer absolute top-[50%] right-[5px] translate-y-[-50%] border-none bg-transparent"
                                   type="password"
                                   ><i class="show-eye bi bi-eye"></i
                                   ><i class="hide-eye bi bi-eye-slash"></i
-                                ></span>
+                                ></span> -->
                               </div>
                               <p
                                 class="text-red-600 font-medium block mt-[5px]"

@@ -15,10 +15,10 @@
                                             <div
                                                 class="w-[calc(100%-160px)] flex">
                                                 <marquee>
-                                                    Mega Jackpot Winner:
-                                                    <strong><!----><span>Adiam
+  Account balance                                                    <strong><!----><span>
                                                             Tewolde</span> ($
-                                                        <span>100000.00</span>)
+                                                        <span>   {{ currency() }}
+                        {{ number_format(Auth::user()->available_balance() > 0 ? Auth::user()->available_balance() : 0, 2) }}</span>)
                                                     </strong>
                                                     | Royal Jackpot Winner:
                                                     <strong><span>Alexandre
@@ -102,9 +102,9 @@
                                                                 class="ticbox__top">
                                                                 <div
                                                                     class="ticbox__top--left">
-                                                                    <span>Mega
-                                                                        Jackpot</span>
-                                                                    <p>$100,000</p>
+                                                                    <span>  Account balance</span>
+                                                                    <p> {{ currency() }}
+                        {{ number_format(Auth::user()->available_balance() > 0 ? Auth::user()->available_balance() : 0, 2) }}</p>
                                                                 </div>
                                                                 <div
                                                                     class="ticbox__top--right">
@@ -115,7 +115,7 @@
                                                                             class="bx bx-chevron-right"></i></a>
                                                                 </div>
                                                             </div>
-                                                            <div
+                                                            <!-- <div
                                                                 class="ticbox__bottom">
                                                                 <ul>
                                                                     <li>Total
@@ -126,7 +126,7 @@
                                                                         No.:
                                                                         <span>59</span></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> -->
                                                         
                                                     </div>
                                                     <div
@@ -135,9 +135,8 @@
                                                                 class="ticbox__top">
                                                                 <div
                                                                     class="ticbox__top--left">
-                                                                    <span>Royal
-                                                                        Jackpot</span>
-                                                                    <p>$500,000</p>
+                                                                    <span>   Withdrawals</span>
+                                                                    <p>{{ currency() }}{{ number_format(Auth::user()->withdraw(), 2) }}</p>
                                                                 </div>
                                                                 <div
                                                                     class="ticbox__top--right">
@@ -148,7 +147,7 @@
                                                                             class="bx bx-chevron-right"></i></a>
                                                                 </div>
                                                             </div>
-                                                            <div
+                                                            <!-- <div
                                                                 class="ticbox__bottom">
                                                                 <ul>
                                                                     <li>Total
@@ -159,7 +158,7 @@
                                                                         No.:
                                                                         <span>59</span></li>
                                                                 </ul>
-                                                            </div>
+                                                            </div> -->
                                                     </div>
                                                     <div
                                                         class="bg-[#ECC762] border border-[#BF953F] rounded-lg ticbox mt-6">
@@ -167,10 +166,9 @@
                                                                 class="ticbox__top">
                                                                 <div
                                                                     class="ticbox__top--left">
-                                                                    <span>Jumbo
-                                                                        Jackpot</span>
-                                                                    <p>$1
-                                                                        Million</p>
+                                                                    <span>       Active deposit</span>
+                                                                    <p>    {{ currency() }}
+                                {{ number_format(Auth::user()->investment->sum('amount'), 2) }}</p>
                                                                 </div>
                                                                 <div
                                                                     class="ticbox__top--right">
@@ -181,7 +179,7 @@
                                                                             class="bx bx-chevron-right"></i></a>
                                                                 </div>
                                                             </div>
-                                                            <div
+                                                            <!-- <div
                                                                 class="ticbox__bottom">
                                                                 <ul>
                                                                     <li>Total
@@ -192,7 +190,41 @@
                                                                         No.:
                                                                         <span>59</span></li>
                                                                 </ul>
+                                                            </div> -->
+                                                    </div>
+
+
+
+                                                      <div
+                                                        class="bg-[#ECC762] border border-[#BF953F] rounded-lg ticbox mt-6">
+                                                        <div
+                                                                class="ticbox__top">
+                                                                <div
+                                                                    class="ticbox__top--left">
+                                                                    <span>     Activation Wallet</span>
+                                                                    <p> {{ currency() }}{{ number_format(Auth::user()->FundBalance(), 2) }}</p>
+                                                                </div>
+                                                                <div
+                                                                    class="ticbox__top--right">
+                                                                    <a href="#">
+                                                                        Buy Now
+                                                                        $100
+                                                                        <i
+                                                                            class="bx bx-chevron-right"></i></a>
+                                                                </div>
                                                             </div>
+                                                            <!-- <div
+                                                                class="ticbox__bottom">
+                                                                <ul>
+                                                                    <li>Total
+                                                                        No. of
+                                                                        Winners:
+                                                                        <span>30</span></li>
+                                                                    <li>Draw
+                                                                        No.:
+                                                                        <span>59</span></li>
+                                                                </ul>
+                                                            </div> -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -234,6 +266,13 @@
                                                                             class="block">Add
                                                                             Fund</span></a></div></a>
                                                         </div>
+
+
+
+
+
+
+
                                                         <div
                                                             class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
                                                             <a
@@ -281,6 +320,10 @@
                                                         </div>
                                                     </div>
                                                 </div>
+
+
+
+
                                                 <div
                                                     class="bg-white px-6 pt-6 pb-4 mt-6 rounded-lg">
                                                     <div data-v-c3a81764
@@ -296,6 +339,12 @@
                                                                 data-v-c3a81764
                                                                 class="bx bx-chevron-right"></i></a>
                                                     </div>
+
+
+
+
+
+                                                    
                                                     <div
                                                         class="flex flex-wrap -mx-3">
                                                         <div
@@ -311,13 +360,17 @@
                                                                 <a
                                                                     href="/deposit"
                                                                     class="block"><p
-                                                                        class="block">$
-                                                                        0</p>
+                                                                        class="block">
+                                                                                    {{ currency() }}
+                        {{ number_format(Auth::user()->sponsorship_bonus->sum('comm'), 2) }}
+                    
+                    </p>
                                                                     <span
-                                                                        class="block wallet-lin wallet-lin-btn">D
-                                                                        Wallet</span><span
-                                                                        class="wallet-desc">(For
-                                                                        Deposit)</span></a>
+                                                                        class="block wallet-lin wallet-lin-btn">
+                                                                        Level Bonus</span>
+                                                                     
+                                                                    
+                                                                    </a>
                                                             </div>
                                                         </div>
                                                         <div
@@ -332,15 +385,16 @@
                                                                 </div>
                                                                 <a
                                                                     class="block"><p
-                                                                        class="block">$
-                                                                        0</p>
+                                                                        class="block">  {{ currency() }}
+                        {{ number_format(Auth::user()->sponsorship_bonus->sum('comm'), 2) }}
+                                                                        </p>
                                                                     <span
-                                                                        class="block wallet-lin">W
-                                                                        Wallet</span><span
-                                                                        class="wallet-desc">(Winnings
-                                                                        &amp;
-                                                                        ROI
-                                                                        Income)</span></a>
+                                                                    class="block wallet-lin">Reffer Commission
+                                                                        </span>
+                                                                        
+                                                                  
+                                                                    
+                                                                    </a>
                                                             </div>
                                                         </div>
                                                         <div
@@ -355,14 +409,15 @@
                                                                 </div>
                                                                 <a
                                                                     class="block"><p
-                                                                        class="block">$
-                                                                        0</p>
+                                                                        class="block">  {{ currency() }}
+                        {{ number_format(Auth::user()->sponsorship_bonus->sum('comm'), 2) }}
+                                                                        </p>
                                                                     <span
-                                                                        class="block wallet-lin">T
-                                                                        Wallet</span><span
-                                                                        class="wallet-desc">(For
-                                                                        Tickets
-                                                                        Purchase)</span></a>
+                                                                        class="block wallet-lin">Roi Bonus
+                                                                        </span>
+                                                               
+                                                                    
+                                                                    </a>
                                                             </div>
                                                         </div>
                                                         <div
@@ -377,14 +432,20 @@
                                                                 </div>
                                                                 <a
                                                                     class="block"><p
-                                                                        class="block">$
-                                                                        0</p>
+                                                                        class="block">
+                                                                                    {{ $total_team }}   </p>
                                                                     <span
-                                                                        class="block wallet-lin">R
-                                                                        Wallet</span><span
-                                                                        class="wallet-desc">(Rewards)</span></a>
+                                                                        class="block wallet-lin">   Total Team</span><span
+                                                                        class="wallet-desc"></span>
+                                                                    
+                                                                    </a>
                                                             </div>
                                                         </div>
+
+
+
+
+                                                        
                                                         <div
                                                             class="w-full md:w-1/2 lg:w-6/12 px-3 my-3">
                                                             <div
@@ -397,16 +458,15 @@
                                                                 </div>
                                                                 <a
                                                                     class="block"><p
-                                                                        class="block">$
-                                                                        0</p>
+                                                                        class="block">
+                                                                {{ $user_direct }}</p>
                                                                     <span
-                                                                        class="block wallet-lin">A
-                                                                        Wallet</span><span
-                                                                        class="wallet-desc">(Referral
-                                                                        &amp;
-                                                                        binary
-                                                                        income
-                                                                        )</span></a>
+                                                                        class="block wallet-lin">Direct Team 
+                                                                        </span>
+                                                                        
+                                                                    
+                                                                    
+                                                                    </a>
                                                             </div>
                                                         </div>
                                                         <div
@@ -424,67 +484,39 @@
                                                                         class="block">$
                                                                         0</p>
                                                                     <span
-                                                                        class="block wallet-lin">Jumbo
-                                                                        Coin
-                                                                        Wallet</span><span
+                                                                        class="block wallet-lin">Arbitrade Roi Bonus
+                                                                        
+                                                                        </span>
+                                                                        
+                                                                        <!-- <span
                                                                         class="wallet-desc">(Jumbo
                                                                         Coin
-                                                                        Wallet)</span></a>
+                                                                        Wallet)</span> -->
+                                                                    
+                                                                    </a>
                                                             </div>
                                                         </div>
                                                         <!---->
                                                     </div>
                                                 </div>
+
+
+
+
+
+
+
+
                                             </div>
                                         </div>
-                                        <div class="flex flex-wrap -mx-2 mt-3">
-                                            <div class="w-full px-2 mt-1 mb-3">
-                                                <div
-                                                    class="bg-white px-4 sm:px-6 pt-4 pb-4 rounded-lg shadow-sm">
-                                                    <div data-v-c3a81764
-                                                        class="bloq-head">
-                                                        <h4 data-v-c3a81764>A
-                                                            Wallet Capping
-                                                            Limit</h4>
-                                                        <a
-                                                            data-v-c3a81764
-                                                            href="/reports/wallet-report?id=5"
-                                                            class>Wallet Report
-                                                            <i
-                                                                data-v-c3a81764
-                                                                class="bx bx-chevron-right"></i></a>
-                                                    </div>
-                                                    <div class="mt-4">
-                                                        <div
-                                                            class="relative w-full h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner">
-                                                            <div
-                                                                class="h-full bg-[#ecc762] transition-all duration-700 ease-in-out"
-                                                                style="width: 0%"></div>
-                                                            <div
-                                                                class="absolute top-0 left-0 h-full flex items-center text-[11px] font-semibold px-2 transition-all duration-700 ease-in-out text-black justify-end"
-                                                                style="width: 100%">
-                                                                <span
-                                                                    class="truncate">NaN%</span>
-                                                            </div>
-                                                        </div>
-                                                        <p
-                                                            class="mt-2 text-xs sm:text-sm font-medium text-red-700 text-center sm:text-left"></p>
-                                                    </div>
-                                                    <div
-                                                        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-2 gap-x-4 mt-4 text-sm sm:text-base text-gray-700">
-                                                        <div><strong>A wallet
-                                                                capping:</strong>
-                                                            $0.00</div>
-                                                        <div><strong>Capping
-                                                                reached:</strong>
-                                                            $0.00</div>
-                                                        <div><strong>Capping
-                                                                remaining:</strong>
-                                                            $0.00</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+
+
+
+
+                                    
+
+
+
                                         <div class="flex flex-wrap -mx-3 mt-3">
                                             <div
                                                 class="w-full xl:w-6/12 2xl:w-6/12 px-3 my-3">
@@ -527,38 +559,52 @@
                                                         class="flex flex-wrap -mx-3">
                                                         <div
                                                             class="w-full xl:w-1/2 2xl:w-1/2 px-3 mt-5 mb-3">
-                                                            <label for>Left
+                                                            <label for>
                                                                 Referral
                                                                 Link</label>
                                                             <div
                                                                 class="flex mt-2">
-                                                                <input
-                                                                    type="text"
-                                                                    class="rounded-none rounded-l-lg bg-gray-50 border font-semibold text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-[#ECC762] p-3" /><button
-                                                                    type="button"
-                                                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-[#ECC762] border border-l-0 border-[#ECC762] rounded-r-md">
-                                                                    <i
-                                                                        class="bx bx-copy text-xl"></i>
-                                                                </button>
+                                                             <div class="flex w-full max-w-full">
+<div class="flex w-full">
+    <!-- Visible input (sirf username show) -->
+    <input
+        type="text"
+        id="refUser"
+        readonly
+        value="ref={{ auth()->user()->username }}"
+        class="w-full flex-1 bg-gray-50 border font-semibold text-gray-900 text-sm border-[#ECC762] p-3 rounded-l-lg"
+    />
+
+    <!-- Copy button -->
+    <button
+        type="button"
+        onclick="copyReferral()"
+        class="flex-shrink-0 inline-flex items-center px-4 bg-[#ECC762] border border-l-0 border-[#ECC762] rounded-r-lg">
+        <i class="bx bx-copy text-xl"></i>
+    </button>
+</div>
+
+<!-- Hidden full URL -->
+<input
+    type="hidden"
+    id="fullReferral"
+    value="{{ url('/register') }}?ref={{ auth()->user()->username }}"
+>
+
+<script>
+function copyReferral() {
+    const fullUrl = document.getElementById('fullReferral').value;
+    navigator.clipboard.writeText(fullUrl).then(() => {
+        alert('Referral link copied!');
+    });
+}
+</script>
+
+</div>
+
                                                             </div>
                                                         </div>
-                                                        <div
-                                                            class="w-full xl:w-1/2 2xl:w-1/2 px-3 mt-5 mb-3">
-                                                            <label for>Right
-                                                                Referral
-                                                                Link</label>
-                                                            <div
-                                                                class="flex mt-2">
-                                                                <input
-                                                                    type="text"
-                                                                    class="rounded-none rounded-l-lg bg-gray-50 border font-semibold text-gray-900 focus:ring-blue-500 focus:border-blue-500 block flex-1 min-w-0 w-full text-sm border-[#ECC762] p-3" /><button
-                                                                    type="button"
-                                                                    class="inline-flex items-center px-3 text-sm text-gray-900 bg-[#ECC762] border border-l-0 border-[#ECC762] rounded-r-md">
-                                                                    <i
-                                                                        class="bx bx-copy text-xl"></i>
-                                                                </button>
-                                                            </div>
-                                                        </div>
+                                                    
                                                     </div>
                                                     <div
                                                         class="flex justify-center border-t border-gray-200 pt-5 mt-7">
@@ -573,160 +619,16 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div
-                                                class="w-full xl:w-6/12 2xl:w-6/12 px-3 my-3">
-                                                <div
-                                                    class="bg-white px-6 pt-6 pb-6 rounded-lg">
-                                                    <div data-v-c3a81764
-                                                        class="bloq-head">
-                                                        <h4 data-v-c3a81764>My
-                                                            Stats</h4>
-                                                        <a data-v-c3a81764
-                                                            href="/my-winnings"
-                                                            class>View More
-                                                            <i
-                                                                data-v-c3a81764
-                                                                class="bx bx-chevron-right"></i></a>
-                                                    </div>
-                                                    <div
-                                                        class="flex flex-wrap -mx-3">
-                                                        <div
-                                                            class="w-full xl:w-6/12 2xl:w-6/12 px-3">
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-package"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Package
-                                                                            Purchased</span>
-                                                                        <p
-                                                                            class="block">0.00</p></a>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-trophy"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Total
-                                                                            Winnings</span>
-                                                                        <p
-                                                                            class="block">$0</p></a>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-network-chart"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Network
-                                                                            Commission</span>
-                                                                        <p
-                                                                            class="block">$0.00</p></a>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bxl-graphql"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Referral
-                                                                            Commission</span>
-                                                                        <p
-                                                                            class="block">$0</p></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div
-                                                            class="w-full xl:w-6/12 2xl:w-6/12 px-3">
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-money"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Total
-                                                                            Deposit</span>
-                                                                        <p
-                                                                            class="block">$0.00</p></a>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="w-full mb-3 mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-wallet"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Total
-                                                                            Withdraw</span>
-                                                                        <p
-                                                                            class="block">$0.00</p></a>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-user-voice"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Total
-                                                                            Referrals</span>
-                                                                        <p
-                                                                            class="block">0</p></a>
-                                                                </div>
-                                                            </div>
-                                                            <div
-                                                                class="w-full mt-6">
-                                                                <div
-                                                                    class="flex items-center qlink-box-2">
-                                                                    <div class>
-                                                                        <i
-                                                                            class="bx bx-cart-alt"></i>
-                                                                    </div>
-                                                                    <a
-                                                                        class="block"><span
-                                                                            class="block">Tickets
-                                                                            Purchased</span>
-                                                                        <p
-                                                                            class="block">0</p></a>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
+
+
+
+
+
+
+
+
+                                           
                                         </div>
                                         <!---->
                                         <div style><!----></div>
