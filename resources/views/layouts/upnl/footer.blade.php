@@ -212,5 +212,7 @@
                 </svg>
             </div>
         </div>
+        @include('partials.notify')
+
     </body>
 </html>

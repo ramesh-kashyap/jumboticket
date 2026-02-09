@@ -21,25 +21,7 @@
                                                 class="text-red-500 font-medium block text-center"></p>
                                             <div
                                                 class="flex flex-wrap -mx-3 mt-3">
-                                                <div
-                                                    class="w-full lg:w-3/12 2xl:w-2/12 px-3 my-3">
-                                                    <div
-                                                        class="w-full bg-black p-3 rounded-lg">
-                                                        <p
-                                                            class="text-white block mb-2 mt-1 uppercase">
-                                                            Select Payment Type:
-                                                        </p>
-                                                        <button
-                                                            class="bg-[#3A3A3A] text-left uppercase font-semibold px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-800 focus:outline-none rounded mb-3 w-full active-type">
-                                                            Cryptocurrency
-                                                            (Gateway
-                                                            1)</button><button
-                                                            class="bg-[#3A3A3A] text-left uppercase font-semibold px-4 py-2 text-white hover:bg-gray-100 hover:text-gray-800 focus:outline-none rounded mb-3 w-full">
-                                                            CRYPTOCURRENCY
-                                                            (Gateway 2)
-                                                        </button>
-                                                    </div>
-                                                </div>
+                                                
                                                 <div
                                                     class="w-full lg:w-9/12 2xl:w-9/12 px-3 my-3">
                                                     <div style>
@@ -54,7 +36,7 @@
                                                                         <div
                                                                             class="w-14 lg:w-20 mr-3">
                                                                             <img
-                                                                                src="/assets/img/crypto/1.png"
+                                                                                src="{{asset('') }}assets/img/btc.png"
                                                                                 alt
                                                                                 class="w-full fund-ico"
                                                                                 draggable="false" />
@@ -65,14 +47,34 @@
                                                                                 class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Bitcoin</span>
                                                                             <div>
                                                                                 <form
-                                                                                    action="#"
-                                                                                    method="POST">
+                                                                                    method="POST" action="{{ route('user.confirm') }}">
+                                                                                     @if (session()->has('messages'))
+                                                                                    <div class="alert alert-success">
+                                                                                       <strong style="color:#006633;">
+                                                                                        {{ session()->get('messages') }}
+                                                                                        </strong>
+                                                                                    </div>
+                                                                                     @endif
+
+                                                                                  @if ($errors->any())
+                                                                                  <div class="alert alert-danger">
+                                                                                         <ul>
+                                                                                    @foreach ($errors->all() as $error)
+                                                                                          <li>{{ $error }}</li>
+                                                                                          @endforeach
+                                                                                               </ul>
+                                                                                                </div>
+                                                                                             @endif
+
+                                                                                             @csrf
                                                                                     <div
                                                                                         class>
                                                                                         <input
                                                                                             type="number"
-                                                                                            placeholder="Amount In USD"
+                                                                                            name="amount" placeholder="Amount In USD"
                                                                                             class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
+                                                                                        <input type="hidden" name="paymentMode" value="BTC">
+
                                                                                         <div
                                                                                             class="flex mt-3">
                                                                                             <button
@@ -95,7 +97,7 @@
                                                                         <div
                                                                             class="w-14 lg:w-20 mr-3">
                                                                             <img
-                                                                                src="/assets/img/crypto/2.png"
+                                                                                src="{{asset('') }}assets/img/trc20.png"
                                                                                 alt
                                                                                 class="w-full fund-ico"
                                                                                 draggable="false" />
@@ -108,14 +110,34 @@
                                                                                 20</span>
                                                                             <div>
                                                                                 <form
-                                                                                    action="#"
-                                                                                    method="POST">
+                                                                                     method="POST" action="{{ route('user.confirm') }}">
+                                                                                                        @if (session()->has('messages'))
+                                                                                    <div class="alert alert-success">
+                                                                                       <strong style="color:#006633;">
+                                                                                        {{ session()->get('messages') }}
+                                                                                        </strong>
+                                                                                    </div>
+                                                                                     @endif
+
+                                                                                  @if ($errors->any())
+                                                                                  <div class="alert alert-danger">
+                                                                                         <ul>
+                                                                                    @foreach ($errors->all() as $error)
+                                                                                          <li>{{ $error }}</li>
+                                                                                          @endforeach
+                                                                                               </ul>
+                                                                                                </div>
+                                                                                             @endif
+
+                                                                                             @csrf
                                                                                     <div
                                                                                         class>
                                                                                         <input
-                                                                                            type="number"
+                                                                                            type="number" name="amount"
                                                                                             placeholder="Amount In USD"
                                                                                             class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
+                                                                                      <input type="hidden" name="paymentMode" value="USDT.TRC20">
+
                                                                                         <div
                                                                                             class="flex mt-3">
                                                                                             <button
@@ -138,7 +160,7 @@
                                                                         <div
                                                                             class="w-14 lg:w-20 mr-3">
                                                                             <img
-                                                                                src="/assets/img/crypto/2.png"
+                                                                                src="{{asset('')}}assets/img/erc20.png"
                                                                                 alt
                                                                                 class="w-full fund-ico"
                                                                                 draggable="false" />
@@ -151,14 +173,34 @@
                                                                                 20</span>
                                                                             <div>
                                                                                 <form
-                                                                                    action="#"
-                                                                                    method="POST">
+                                                                                     method="POST" action="{{ route('user.confirm') }}">
+                                                                                                        @if (session()->has('messages'))
+                                                                                    <div class="alert alert-success">
+                                                                                       <strong style="color:#006633;">
+                                                                                        {{ session()->get('messages') }}
+                                                                                        </strong>
+                                                                                    </div>
+                                                                                     @endif
+
+                                                                                  @if ($errors->any())
+                                                                                  <div class="alert alert-danger">
+                                                                                         <ul>
+                                                                                    @foreach ($errors->all() as $error)
+                                                                                          <li>{{ $error }}</li>
+                                                                                          @endforeach
+                                                                                               </ul>
+                                                                                                </div>
+                                                                                             @endif
+
+                                                                                             @csrf
                                                                                     <div
                                                                                         class>
                                                                                         <input
-                                                                                            type="number"
+                                                                                            type="number" name="amount"
                                                                                             placeholder="Amount In USD"
                                                                                             class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
+                                                                                            <input type="hidden" name="paymentMode" value="USDT.ERC20">
+
                                                                                         <div
                                                                                             class="flex mt-3">
                                                                                             <button
@@ -181,7 +223,7 @@
                                                                         <div
                                                                             class="w-14 lg:w-20 mr-3">
                                                                             <img
-                                                                                src="/assets/img/cryptos/usdtbep20.png"
+                                                                                src="{{asset('') }}assets/img/usdtbep20.png"
                                                                                 alt
                                                                                 class="w-full fund-ico"
                                                                                 draggable="false" />
@@ -194,14 +236,34 @@
                                                                                 20</span>
                                                                             <div>
                                                                                 <form
-                                                                                    action="#"
-                                                                                    method="POST">
+                                                                                     method="POST" action="{{ route('user.confirm') }}">
+                                                                                                        @if (session()->has('messages'))
+                                                                                    <div class="alert alert-success">
+                                                                                       <strong style="color:#006633;">
+                                                                                        {{ session()->get('messages') }}
+                                                                                        </strong>
+                                                                                    </div>
+                                                                                     @endif
+
+                                                                                  @if ($errors->any())
+                                                                                  <div class="alert alert-danger">
+                                                                                         <ul>
+                                                                                    @foreach ($errors->all() as $error)
+                                                                                          <li>{{ $error }}</li>
+                                                                                          @endforeach
+                                                                                               </ul>
+                                                                                                </div>
+                                                                                             @endif
+
+                                                                                             @csrf
                                                                                     <div
                                                                                         class>
                                                                                         <input
-                                                                                            type="number"
+                                                                                            type="number" name="amount"
                                                                                             placeholder="Amount In USD"
                                                                                             class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
+                                                                                            <input type="hidden" name="paymentMode" value="USDT.BEP20">
+
                                                                                         <div
                                                                                             class="flex mt-3">
                                                                                             <button
@@ -217,213 +279,10 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#2F3030] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/eth.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Ethereum</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#BA9F33] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/doge.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Doge
-                                                                                Coin</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#345D9D] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/ltc.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Lite
-                                                                                Coin</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#000] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/xrp.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">XRP</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#ED0023] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/tron.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Tron</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                
+                                                               
+                                                               
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>
@@ -877,130 +736,9 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#345D9D] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/ltc.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Lite
-                                                                                Coin</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#000] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/xrp.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">XRP</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="w-full xl:w-1/2 2xl:w-4/12 px-3 my-3">
-                                                                    <div
-                                                                        class="bg-[#ED0023] p-4 rounded-lg flex items-center">
-                                                                        <div
-                                                                            class="w-14 lg:w-20 mr-3">
-                                                                            <img
-                                                                                src="/assets/img/cryptos/tron.png"
-                                                                                alt
-                                                                                class="w-full fund-ico"
-                                                                                draggable="false" />
-                                                                        </div>
-                                                                        <div
-                                                                            class="w-[calc(100%-56px)] lg:w-[calc(100%-92px)]">
-                                                                            <span
-                                                                                class="uppercase font-semibold mb-1 block text-white fund-title text-lg">Tron</span>
-                                                                            <div>
-                                                                                <form
-                                                                                    action="#"
-                                                                                    method="POST">
-                                                                                    <div
-                                                                                        class>
-                                                                                        <input
-                                                                                            type="number"
-                                                                                            placeholder="Amount In USD"
-                                                                                            class="w-full rounded-lg h-[45px] outline-none shadow-none no-border" />
-                                                                                        <div
-                                                                                            class="flex mt-3">
-                                                                                            <button
-                                                                                                type="submit"
-                                                                                                class="bg-[#111] text-[#fff] h-[40px] w-[100%] rounded-lg text-[16px] uppercase flex items-center justify-center add-submit">
-                                                                                                Add
-                                                                                                Fund
-                                                                                            </button>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </form>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                               
+                                                               
+                                                                
                                                             </div>
                                                         </div>
                                                     </div>

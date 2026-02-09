@@ -534,7 +534,6 @@ public function cancel_payment($id)
   try{
     $validation =  Validator::make($request->all(), [
         'amount' => 'required|numeric|min:50',
-        'paymentMode' => 'required',
         'transaction_id' => 'required|unique:investments,transaction_id',
     ]);
 
@@ -554,47 +553,23 @@ public function cancel_payment($id)
        $invest_check=Investment::where('user_id',$user_detail->id)->where('status','!=','Decline')->orderBy('id','desc')->limit(1)->first();
        $invoice = substr(str_shuffle("0123456789"), 0, 7);
        $joining_amt =$request->amount;
-        $plan ='BEGINNER';
-       if ($joining_amt>=50 && $joining_amt<=200) 
-       {
-        $plan ='BEGINNER';
-       }
-       elseif($joining_amt>=400 && $joining_amt<=800)
-       {
-        $plan ='STANDARD';
-       }
-       elseif($joining_amt>=1000 && $joining_amt<=2000)
-       {
-        $plan ='EXCLUSIVE';
-       }
-       elseif($joining_amt>=2500 && $joining_amt<=5000)
-       {
-        $plan ='ULTIMATE';
-       }
-
-       elseif($joining_amt>=5000 && $joining_amt<=10000)
-       {
-        $plan ='PREMIUM';
-       }
-
-       elseif($joining_amt>=5000)
-       {
-        $plan ='PREMIUM';
-       }
-      
+        
 
 
       $last_package = ($invest_check)?$invest_check->amount:0;
 
         
+
+    if ($user->fundbalance2() < $request->amount) {
+        return back()->withErrors(array('Insufficient balance in wallet'));
+    }
            $data = [
-                'plan' => $plan,
                 'transaction_id' =>$request->transaction_id,
                 'user_id' => $user_detail->id,
                 'user_id_fk' => $user_detail->username,
                 'amount' => $request->amount,
                 'payment_mode' =>$request->paymentMode,
-                'status' => 'Pending',
+                'status' => 'Active',
                 'sdate' => Date("Y-m-d"),
                 'active_from' => $user->username,
             ];
