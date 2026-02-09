@@ -158,7 +158,7 @@ class User extends Authenticatable
     
     public function available_balance()
     {
-    $balance = (Auth::user()->users_incomes()) - (Auth::user()->withdrawtotal()+Auth::user()->compound());
+    $balance = (Auth::user()->users_incomes()) - (Auth::user()->withdrawtotal()+(Auth::user()->investment->sum('amount')));
     return $balance;
     } 
 
@@ -204,7 +204,7 @@ class User extends Authenticatable
 
 public function investment()
 {
-      return $this->hasMany('App\Models\Investment','user_id','id')->where('status',"Active");
+      return $this->hasMany('App\Models\Investment','user_id','id')->where('status',"Active")->where('walletType',2);
 }
 public function Activeinvestment(){
         return $this->hasMany('App\Models\Investment','user_id','id')->where('status','Active');
@@ -220,7 +220,18 @@ public function Activeinvestment(){
     }
 
 
-  
+   public function buyfund()
+    {
+        return  BuyFund::where('user_id',Auth::user()->id)->where('status','Pending')->sum('amount');
+    } 
+    public function Investamount()
+    {
+        return  Investment::where('user_id',Auth::user()->id)->where('status','!=','Failed')->sum('amount');
+    } 
 
-    
+    public function fundbalance2()
+    {
+    $balance = (Auth::user()->buyfund())-(Auth::user()->Investamount());
+    return $balance;
+    } 
 }
