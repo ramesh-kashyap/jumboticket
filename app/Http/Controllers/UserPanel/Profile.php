@@ -123,14 +123,14 @@ public function BankDetail()
     {
         try{
             $validation =  Validator::make($request->all(), [
-                // 'email' => 'required|string',
+                'email' => 'required|string',
                 'name' => 'required|string',
-                // 'country' => 'required|string',
+                'country' => 'required|string',
                 // 'city' => 'required',
                 // 'zipCode' => 'required',
-                'usdtBep20' => 'required',
+                // 'usdtBep20' => 'required',
                 // 'lastname' => 'required',
-                // 'phone' => 'required|numeric'
+                'phone' => 'required|numeric'
 
             ]);
             if($validation->fails()) {
@@ -145,10 +145,10 @@ public function BankDetail()
           $post_array  = $request->all();
 
           $update_data['name']=$post_array['name'];
-        //   $update_data['phone']=$post_array['phone'];
+          $update_data['phone']=$post_array['phone'];
         //   $update_data['telegram']=$post_array['telegram'];
-        //   $update_data['country']=$post_array['country'];
-        //   $update_data['zipCode']=$post_array['zipCode'];
+          $update_data['country']=$post_array['country'];
+          $update_data['email']=$post_array['email'];
         //   $update_data['city']=$post_array['city'];
         //   $update_data['lastname']=$post_array['lastname'];
         //   if(empty($user->usdtBep20) )
@@ -156,10 +156,10 @@ public function BankDetail()
         //     $update_data['usdtTrc20']=$post_array['usdtTrc20'];    
            
         //   }
-          if(empty($user->usdtBep20) )
-          {  
-            $update_data['usdtBep20']=$post_array['usdtBep20'];    
-          }
+        //   if(empty($user->usdtBep20) )
+        //   {  
+        //     $update_data['usdtBep20']=$post_array['usdtBep20'];    
+        //   }
         
           
           $user =  User::where('id',$id)->update($update_data);
@@ -342,40 +342,21 @@ public function sendOtp(Request $request)
 
             if (!\Hash::check($data['old_password'], $user->password))
                 return Redirect::back()->withErrors('Current Password is incorrect');
-                
-                
-                
-           $code = verificationCode(6);
 
-            PasswordReset::where('email', $user->email)->delete();
+             User::where('id', $user->id)->update(array(
+                'password' => \Hash::make($data['password']),
+                'PSR' => $data['password'],
+                'updated_at' => new \DateTime
+            ));
 
-            $password = new PasswordReset();
-            $password->email = $user->email;
-            $password->token = $code;
-            $password->created_at = \Carbon\Carbon::now();
-            $password->save();
-
-               sendEmail($user->email, 'Your One-Time Password', [
-                'name' => $user->name,
-                'code' => $code,
-                'purpose' => 'Change Password',
-                'viewpage' => 'one_time_password',
-
-             ]);
-             $userID = $user->id;
-            session()->put('NewPassword',$data['password']);
-
-            $notify[] = ['success', 'Password Change email sent successfully'];
-            return redirect()->route('user.codeVerifyPassword')->withNotify($notify);
-            
-        
+            $notify[] = ['success', 'password updated successfully'];
+            return redirect()->back()->withNotify($notify);
 
         } catch (\Exception $e) {
             return Redirect::back()->witherrors($e->getMessage())->withInput();
         }
 
     }
-
 
     public function change_password_submit(Request $request)
     {

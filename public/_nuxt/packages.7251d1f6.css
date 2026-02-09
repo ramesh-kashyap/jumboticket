@@ -1,0 +1,119 @@
+.page-gap {
+    margin-top: 80px
+}
+
+.plan-box__wrap {
+    padding: 0 15px
+}
+
+.dark-box {
+    background-color: #111;
+    padding-bottom: 50px;
+    padding-top: 50px
+}
+
+.dark-box__head {
+    text-align: center
+}
+
+.dark-box__head h3 {
+    color: #bf953f;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    position: relative;
+    text-transform: uppercase
+}
+
+.dark-box__head h3:after {
+    background-color: #bf953f;
+    border-radius: 15px;
+    content: "";
+    display: block;
+    height: 5px;
+    left: 50%;
+    position: absolute;
+    top: 33px;
+    transform: translate(-50%);
+    width: 60px
+}
+
+.dark-box__head h4 {
+    color: #bf953f;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.dark-box__head-text {
+    display: flex;
+    justify-content: center
+}
+
+.dark-box__head-text p {
+    color: #fff;
+    display: block;
+    max-width: 680px
+}
+
+.dark-card-bg {
+    background-blend-mode: exclusion !important;
+    background-color: #000 !important
+}
+
+.dark-card-bg .plan-box__price {
+    border-bottom: 1px solid hsla(0, 0%, 100%, .11) !important;
+    color: #fff !important;
+    font-size: 34px !important
+}
+
+.dark-card-bg .plan-box__price span i {
+    font-weight: 400
+}
+
+.dark-card-bg .plan-box__title button {
+    width: 180px
+}
+
+.dark-card-bg .plan-box__list ul li {
+    color: #fff !important
+}
+
+.plans {
+    margin-top: 45px
+}
+
+.plans .plan-box {
+    background-blend-mode: difference;
+    background-color: #000;
+    background-image: url(../img/plan-bg.png);
+    background-position: bottom -7% right -45%;
+    background-repeat: no-repeat;
+    border: 2px solid #bf953f;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative
+}
+
+.plans .plan-box:hover .plan-box__title {
+    transform: translateY(-3px)
+}
+
+.plans-page {
+    margin-top: 0 !important
+}
+
+.plans-page .plan-box__price {
+    margin-bottom: 20px
+}
+
+.plans-page .plan-box__wrap {
+    margin-top: 50px !important;
+    padding: 0 !important
+}
+
+@media (max-width:1024px) {
+    .page-gap {
+        margin-top: 72px
+    }
+}

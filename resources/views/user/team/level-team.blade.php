@@ -1,238 +1,199 @@
+<div>
+    <div class="bg-white px-6 py-6 rounded-lg mt-2 grid">
+        <div data-v-c3a81764="" class="bloq-head">
+            <h4 data-v-c3a81764="">Level Team Report</h4>
 
 
-
-<div id="main-content" class="flex-grow-1 m-3">
-    <nav class="navbar navbar-expand-lg sticky-top shadow-sm main-header">
-        <div class="container-fluid">
-            <button class="btn btn-outline-secondary d-md-none me-2" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <button id="sidebarToggle" class="btn btn-outline-secondary d-none d-md-inline-block me-3">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <span class="navbar-brand text-capitalize text-white mb-0 h1 d-none d-sm-inline-block">Total Team List
-</span>
-
-             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mb-0 dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-user-circle fa-lg me-1"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownUser">
-                        <!--<li><a class="dropdown-item" href="{{route('user.GenerateTicket')}}"><i-->
-                        <!--            class="fas fa-headset fa-fw me-2"></i>Support</a></li>-->
-                                    
-                        <li><a class="dropdown-item" href="{{route('user.profile')}}"><i
-                                    class="fas fa-user-edit fa-fw me-2"></i>Edit Account</a></li>
-                        <li><a class="dropdown-item" href="{{route('user.ChangePass')}}"><i
-                                    class="fas fa-shield-alt fa-fw me-2"></i>Security</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            class="d-none">
-                            @csrf
-                        </form>
-                        <li><a class="dropdown-item text-danger" href="{{ route('logout') }}"onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i
-                                    class="fas fa-sign-out-alt fa-fw me-2"></i>Logout</a></li>
-                    </ul>
-                </li>
-            </ul>
         </div>
-    </nav>
-    <div class="top-video">
-        <video class="top" src="video/top.mp4" type="video/mp4" muted autoplay loop plays-inline
-            poster="video/poster.png"></video>
-    </div>
 
-    <style>
-    .h2, h2 {
-    font-size: larger;
-}
-        @media (min-width: 1200px) {
-    .h2, h2 {
-        font-size: larger;
-    }
-}
 
-    </style>
-    <div class="card mt-3">
-        <div class="card-header">
-            <h3>Total Team List</h3>
-        </div>
-        <div class="card-body">
 
-            <div class="row mb-3">
-                <div style="margin-bottom:16px" class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Total Team</h5>
-                    <h2 class="mb-0">{{ $activetotalTeam }}/{{ $totalTeam }}</h2>
-                        </div>
-                    </div>
-                </div>
-                <div style="margin-bottom:16px" class="col-md-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Total Referrals</h5>
-                    <h2 class="mb-0">{{ $active_directTeam }}/{{ $directTeam }}</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3" style="margin-bottom:16px">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>Total Commission</h5>
-                            <h2 class="mb-0">${{ number_format(Auth::user()->sponsorship_bonus->sum('comm'), 2) }}  {{generalDetail()->cur_text}}</h2>
-                        </div>
-                    </div>
-                </div>
+    <form action="{{route('user.level-team')}}" method="Get">
+
+            <div class="flex flex-wrap -mx-3 mt-3 items-end">
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                    
                 
-                <div class="col-md-3" style="margin-bottom:16px">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5>2 Leg Business</h5>
-                            <h2 class="mb-0">${{number_format(Auth::user()->teamA,1)}} / ${{number_format(Auth::user()->teamB,1)}}</h2>
-                        </div>
+                
+                
+          
+                    
+                    <input type="text" style="height: 3rem;" Placeholder="Search Users"
+                                                        name="search"  class="bg-gray-50 border border-[#ECC762] px-4 py-2 h-[45px] rounded-lg outline-none shadow-none w-full flatpickr-input" value="{{ @$search }}">
                     </div>
-                </div>
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                
+                
+              
+                       <select name="limit" style="height: 3rem;"                         class="bg-gray-50 border border-[#ECC762] px-4 py-2 h-[45px] rounded-lg outline-none shadow-none w-full flatpickr-input"
+>
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                    
+                    
+                    </div>
+
+
+
+
+
+                         
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                    
+          
+                        
+                               <div  class="bg-[#ECC762] px-4 py-2 h-[45px] rounded-lg border-[#ECC762] uppercase font-semibold inline-flex items-center transition-all justify-center w-full hover:opacity-90">
+                                                <div class="form-group mb-3">
+                                                     <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
+                                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                                        value="Search" />
+                                                </div>
+                                            </div>
+                        
+                        </div>
+                    
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                    
+          
+                        
+                               <div  class="bg-[#ECC762] px-4 py-2 h-[45px] rounded-lg border-[#ECC762] uppercase font-semibold inline-flex items-center transition-all justify-center w-full hover:opacity-90">
+                                                <div class="form-group mb-3">
+                                                    <a href="{{ route('user.level-team') }}" style="padding: 0.6rem 2rem;"
+                                                        name="reset"
+                                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                                        value="Reset">Reset</a>
+                                                </div>
+                                            </div>
+                        
+                        </div>
             </div>
+        </form>
+
+        <div class="overflow-x-auto rounded-lg mt-5">
 
 
-            <h4 class="mb-4 mt-5">Total Team List</h4>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-
-                            <th>Username</th>
-                            <!--<th>Email</th>-->
-                            <th>Level</th>
-                            <th>Sponsor ID</th>
 
 
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {{-- Logged-in User Info --}}
-                        <!-- <tr>
-                            <td><b>{{ Auth::user()->username }}</b></td>
-                            <td><a href="mailto:{{ Auth::user()->email }}"
-                                    class="themed-link">{{ Auth::user()->email }}</a></td>
-                            <td><span class="text-success">Logged In User</span></td>
-                        </tr> -->
+            <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-[#111] uppercase bg-[#ECC762]">
+                    <tr>
+                        <th scope="col" class="px-6 py-5">Sl No.</th>
+                        <th scope="col" class="px-6 py-5">Member ID</th>
+                        <th scope="col" class="px-6 py-5">Name</th>
+                        <th scope="col" class="px-6 py-5">Email</th>
+                        <th scope="col" class="px-6 py-5">phone</th>
+                        <th scope="col" class="px-6 py-5">Joining Date</th>
+                        <th scope="col" class="px-6 py-5">Status</th>
 
-                        {{-- Direct Team Members --}}
-                        @if(is_array($direct_team) || is_object($direct_team))
-                        @foreach ($direct_team as $value)
-                        <tr>
-                            <td>{{ $value->name }}</td>
+                    </tr>
+                </thead>
+                <tbody>
 
-                            <td><b>{{ $value->username }}</b></td>
-                            <!--<td><a href="mailto:{{ $value->email }}" class="themed-link">{{ $value->email }}</a></td>-->
-                            <td class="themed-link">Lvl-{{$value->level - Auth::user()->level}}</td>
-                            <td class="themed-link">{{$value->sponsor_detail->username}}</td>
-                            <td>
-                            @if ($value->active_status!="Pending")
-                                <span class="text-success">${{ number_format($value->package,2) }}</span>
-                            @else
-                                <span class="text-warning">No deposit yet</span>
-                            @endif
-                            </td>
+                    <?php if(is_array($direct_team) || is_object($direct_team)){ ?>
 
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <small>
-                                    
-                                    <span class="badge bg-primary"></span>
-                                </small>
-                            </td>
-                        </tr>
-                        @endforeach
-                        @endif
-                    </tbody>
-                   
-                </table>
+                    <?php $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
+                    @foreach ($direct_team as $user)
+                    <tr class="bg-[#EEEEEE] border-b font-medium text-[#111]">
+                        <td class="px-6 py-3"><?= $cnt += 1?></td>
+                        <td class="px-6 py-3">{{ $user->username }}</td>
+                        <td class="px-6 py-3" {{ $user->name }}</td>
+                        <td class="px-6 py-3">
+                            {{ $user->email }}
+                        </td>
+                        <td class="px-6 py-3">
+                            {{ $user->phone }}
+                        </td>
+                        <td class="px-6 py-3">
+                            {{ $user->jdate}}
+                        </td>
+                        <td class="px-6 py-3">
+                            {{ $user->active_status}}
+                        </td>
 
-                {{-- Pagination --}}
-                <div class="pagination justify-content-center mt-3">
-                    {{ $direct_team->links('pagination::bootstrap-4') }}
-                </div>
 
-            </div>
+
+                    </tr>
+                    @endforeach
+
+                    <?php }?>
+                </tbody>
+            </table>
+
+
+
+
+
+
         </div>
+        </br></br>
+<style>
+
+/* Pagination container */
+.pagination {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Page item */
+.page-item {
+    display: inline-block;
+}
+
+/* Page link */
+.page-link {
+    padding: 8px 14px;
+    border: 1px solid #dee2e6;
+    color: #111;
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.page-link:hover {
+    background-color: #ECC762;
+    border-color: #ECC762;
+    color: #111;
+}
+
+/* Active page */
+.page-item.active .page-link {
+    background-color: #ECC762;
+    border-color: #ECC762;
+    color: #111;
+    font-weight: 600;
+}
+
+/* Disabled */
+.page-item.disabled .page-link {
+    color: #999;
+    pointer-events: none;
+    background-color: #f5f5f5;
+}
+
+/* Right align */
+.pagination-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+
+</style>
+@if ($direct_team->hasPages())
+    <div class="pagination-wrapper">
+        {{ $direct_team->withQueryString()->links() }}
     </div>
+@endif
 
+    </div>
 </div>
-@include('layouts.upnl.sidebar')
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
-</script>
-<script src="{{asset('')}}assets/js/dash.js"></script>
-
-
-<script>
-    window.addEventListener('load', function () {
-        // All resources (images, scripts, stylesheets, etc.) are loaded
-        const preloaderContainer = document.querySelector('.preloader-container');
-        const content = document.querySelector('.content');
-
-        if (preloaderContainer) {
-            // Add the 'hidden' class to trigger the fade-out animation
-            preloaderContainer.classList.add('hidden');
-
-            // Optional: If you want to completely remove the preloader from the DOM
-            // after the transition, you can listen for the 'transitionend' event.
-            preloaderContainer.addEventListener('transitionend', function () {
-                if (preloaderContainer.style.opacity === '0' || getComputedStyle(preloaderContainer)
-                    .opacity === '0') {
-                    preloaderContainer.style.display = 'none'; // Or preloaderContainer.remove();
-                }
-            }, {
-                once: true
-            }); // {once: true} ensures the event listener is removed after it fires
-        }
-
-        if (content) {
-            content.style.display = 'block'; // Or any other display type you need, e.g., 'flex'
-            // If you used opacity for content:
-            // content.style.opacity = '1';
-            // content.style.visibility = 'visible';
-        }
-    });
-
-    // Fallback in case 'load' event doesn't fire or takes too long (e.g., for broken images)
-    // You might want to adjust the timeout duration
-    setTimeout(function () {
-        const preloaderContainer = document.querySelector('.preloader-container');
-        const content = document.querySelector('.content');
-
-        if (preloaderContainer && !preloaderContainer.classList.contains('hidden')) {
-            console.warn("Preloader timeout reached. Forcing hide.");
-            preloaderContainer.classList.add('hidden');
-            if (preloaderContainer.style.opacity === '0' || getComputedStyle(preloaderContainer).opacity ===
-                '0') {
-                preloaderContainer.style.display = 'none';
-            }
-            if (content) {
-                content.style.display = 'block';
-            }
-        }
-    }, 10000); // 10 seconds timeout as an example
-
-</script>
-
-</body>
-
-</html>

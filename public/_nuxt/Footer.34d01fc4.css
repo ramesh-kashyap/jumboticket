@@ -1,0 +1,230 @@
+.redirect-btn-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px
+}
+
+.redirect-btn {
+    align-items: center;
+    background-color: #ecc762;
+    border-radius: .5rem;
+    color: #222;
+    display: inline-flex;
+    font-weight: 600;
+    justify-content: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .2s ease
+}
+
+.redirect-btn:hover {
+    opacity: .9
+}
+
+.popup-bg {
+    align-content: center;
+    background-color: #0000008c;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999
+}
+
+.popup-bg .popup {
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    background-color: #28282866;
+    border-radius: 8px;
+    height: auto;
+    margin: 0 15px;
+    max-width: 600px;
+    position: relative;
+    width: 100%
+}
+
+.popup-bg .popup-content {
+    padding: 15px
+}
+
+.popup-bg .popup-content img {
+    border-radius: 5px;
+    width: 100%
+}
+
+.popup-bg .popup .close-btn {
+    align-items: center;
+    background-color: red;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    height: 30px;
+    justify-content: center;
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 30px
+}
+
+.popup-bg .popup .close-btn i {
+    display: contents;
+    font-size: 22px
+}
+
+.betting-control {
+    margin-top: 15px
+}
+
+.betting-control img {
+    margin-bottom: 15px;
+    width: 100%
+}
+
+.in-touch li a {
+    color: #bf953f;
+    text-decoration: none
+}
+
+.mobile-footer-links button {
+    background-color: #bf953f !important;
+    border: none;
+    border-radius: 8px;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 13px 15px;
+    position: relative;
+    text-align: left;
+    width: 100%
+}
+
+.mobile-footer-links button i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%)
+}
+
+.mobile-footer-links ul {
+    background-color: #111;
+    border: 1px solid hsla(0, 0%, 100%, .103);
+    border-radius: 8px;
+    margin-top: 10px !important;
+    padding: 5px 12px !important
+}
+
+.footer {
+    background-color: #000;
+    color: #ecc762;
+    padding: 50px 0 25px
+}
+
+.footer-box-one img {
+    height: 60px;
+    margin-bottom: 25px
+}
+
+.footer-box-one ul {
+    display: flex;
+    margin: 0;
+    padding: 0
+}
+
+.footer-box-one ul li {
+    list-style: none;
+    margin-right: 10px
+}
+
+.footer-box-one ul li a {
+    align-items: center;
+    background-color: #ecc762;
+    border-radius: 8px;
+    color: #111;
+    display: flex;
+    font-size: 16px;
+    height: 35px;
+    justify-content: center;
+    text-decoration: none;
+    transition: all .3s ease;
+    width: 35px
+}
+
+.footer-box-one ul li a:hover {
+    opacity: .8
+}
+
+.footer-box-list h4 {
+    color: #bf953f;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase
+}
+
+.footer-box-list ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.footer-box-list ul li {
+    line-height: 2
+}
+
+.footer-box-list ul li a {
+    color: #ecc762;
+    text-decoration: none;
+    transition: all .3s ease
+}
+
+.footer-box-list ul li a:hover {
+    color: #bf953f
+}
+
+.footer-contact h4 {
+    color: #bf953f;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-transform: uppercase
+}
+
+.footer-contact ul {
+    margin: 0 0 10px;
+    padding: 0
+}
+
+.footer-contact ul li {
+    font-weight: 600;
+    line-height: 2;
+    list-style: none
+}
+
+.copyrights {
+    border-top: 1px solid hsla(0, 0%, 100%, .185);
+    padding-top: 25px;
+    text-align: center
+}
+
+.copyrights span {
+    font-size: 14px
+}
+
+.mobile-footer-links {
+    display: none
+}
+
+@media (max-width:767.98px) {
+    .desk-footer-links {
+        display: none
+    }
+    .mobile-footer-links {
+        display: block
+    }
+}

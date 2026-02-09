@@ -1,0 +1,192 @@
+.page-gap {
+    margin-top: 80px
+}
+
+.gap-nr {
+    padding-right: 0
+}
+
+.jpack-page {
+    padding-top: 50px
+}
+
+.jpack-wrap {
+    border: 2px solid #bf953f;
+    border-radius: 8px;
+    margin: 15px 0
+}
+
+.jpack-wrap p {
+    margin-bottom: 0
+}
+
+.jpack-type {
+    align-items: center;
+    background-color: #bf953f;
+    color: #000;
+    display: flex;
+    font-size: 24px;
+    font-weight: 600;
+    height: 80px;
+    padding: 15px 20px
+}
+
+.jpack-head {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600
+}
+
+.jpack-cont {
+    text-align: center
+}
+
+.jpack-cont span {
+    color: #bf953f;
+    font-size: 15px;
+    font-weight: 500
+}
+
+.jpack-cont p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600
+}
+
+.partners {
+    margin-top: 50px
+}
+
+.partners-top {
+    background-color: #333;
+    background-image: url(../img/business-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+    padding-top: 50px
+}
+
+.partners-top-text {
+    text-align: center
+}
+
+.partners-top-text h4 {
+    color: #bf953f;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.partners-top-text span {
+    color: #fff
+}
+
+.partner-card {
+    background-color: #000;
+    border: 2px solid #bf953f;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center
+}
+
+.partner-card h4 {
+    color: #b1924e;
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: uppercase
+}
+
+.partner-card img {
+    height: 80px;
+    margin: 20px 0
+}
+
+.partner-card p {
+    color: #fff;
+    margin-bottom: 0
+}
+
+.partner-card p span {
+    color: #b1924e
+}
+
+.partners-bottom {
+    background-color: #000
+}
+
+.prtop-gap {
+    transform: translateY(-70px)
+}
+
+.referrals-section {
+    background-color: #000;
+    padding-bottom: 50px
+}
+
+.referrals-section .referrals-block h4 {
+    color: #b1924e;
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+.referrals-section .referrals-block p {
+    color: #fff
+}
+
+.referrals-section-img img {
+    width: 100%
+}
+
+.comission-section {
+    background-color: #111;
+    padding-bottom: 50px;
+    padding-top: 50px
+}
+
+.comission-section .comission-block h4 {
+    color: #b1924e;
+    font-size: 36px;
+    font-weight: 600;
+    text-transform: uppercase
+}
+
+.comission-section .comission-block p {
+    color: #fff
+}
+
+.comission-section-img img {
+    width: 100%
+}
+
+.comission-section-img h5,
+.comission-section-img p {
+    color: #b1924e;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-transform: uppercase
+}
+
+@media (max-width:992.98px) {
+    .gap-nr {
+        padding-right: 15px
+    }
+    .jpack-type {
+        justify-content: center
+    }
+    .jpack-head {
+        text-align: center
+    }
+    .jpack-wrap p {
+        padding-bottom: 15px;
+        padding-top: 15px
+    }
+}
+
+@media (max-width:1024px) {
+    .page-gap {
+        margin-top: 72px
+    }
+}
