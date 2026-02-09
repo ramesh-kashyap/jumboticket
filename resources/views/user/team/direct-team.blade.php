@@ -1,65 +1,200 @@
-<div class="px-[25px] py-[20px] flex-1">
-    <div>
-        <div class="bg-white px-6 py-6 rounded-lg mt-2 grid">
-         <div data-v-c3a81764="" class="bloq-head"><h4 data-v-c3a81764="">Direct Team Report</h4><a data-v-c3a81764="" href="/buy-ticket" class=""> Report <i data-v-c3a81764="" class="bx bx-chevron-right"></i></a></div>
-            <form action="#" method="POST">
-                <div class="flex flex-wrap -mx-3 mt-3 items-end">
-                    
-                    <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
-                        <label for="" class="mb-1 block"></label>
-                        <input type="search" data-input="true" placeholder="search" class="bg-gray-50 border border-[#ECC762] px-4 py-2 h-[45px] rounded-lg outline-none shadow-none w-full flatpickr-input" placeholder="search">
-                    </div>
-                  
-                    <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
-                        <button type="submit" class="bg-[#ECC762] px-4 py-2 h-[45px] rounded-lg border-[#ECC762] uppercase font-semibold inline-flex items-center transition-all justify-center w-full hover:opacity-90"><i class="bx bxs-filter-alt mr-1"></i> Search </button></div>
-                </div>
-            </form>
-            <div class="overflow-x-auto rounded-lg mt-5">
-                <table class="w-full text-sm text-left text-gray-500">
-                    <thead class="text-xs text-[#111] uppercase bg-[#ECC762]">
-                        <tr>
-                            <th scope="col" class="px-6 py-5">Sl No.</th>
-                            <th scope="col" class="px-6 py-5">Date</th>
-                            <th scope="col" class="px-6 py-5">Member ID</th>
-                            <th scope="col" class="px-6 py-5">Name</th>
-                            <th scope="col" class="px-6 py-5">Mobile No.</th>
-                            <th scope="col" class="px-6 py-5">Amount</th>
-                            <th scope="col" class="px-6 py-5">Description</th>
-                        </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
-                <div class="flex justify-end mt-4 mr-5"><span class="text-black inline-block mr-3">Total Amount:</span><strong class="text-black">$0.00</strong></div>
-            </div>
-            <div data-v-c94c6b57="" class="bg-white py-3 flex items-center justify-between border-t-transparent border-gray-200">
-                <div data-v-c94c6b57="" class="sm:flex-1 sm:flex sm:items-center sm:justify-between">
-                    <div data-v-c94c6b57="">
-                        <p data-v-c94c6b57="" class="text-sm text-darkblue-400"> Showing <span data-v-c94c6b57="" class="font-medium text-darkblue-600">1</span> to <span data-v-c94c6b57="" class="font-medium text-darkblue-600">0</span> of <span data-v-c94c6b57="" class="font-medium text-darkblue-600">0</span> results </p>
-                    </div>
-                    <div data-v-c94c6b57="" class="flex">
-                        <ul data-v-c94c6b57="" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                            <li data-v-c94c6b57="" class="opacity-50 pointer-events-none relative cursor-pointer inline-flex items-center px-2 py-2 rounded-l-md border bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"><span data-v-c94c6b57="" class="sr-only">First</span><svg data-v-c94c6b57="" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path data-v-c94c6b57="" fill-rule="evenodd" d="M15.707 15.707a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 010 1.414zm-6 0a1 1 0 01-1.414 0l-5-5a1 1 0 010-1.414l5-5a1 1 0 011.414 1.414L5.414 10l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd"></path>
-                                </svg></li>
-                            <li data-v-c94c6b57="" class="opacity-50 pointer-events-none relative cursor-pointer inline-flex items-center px-2 py-2 border bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"><span data-v-c94c6b57="" class="sr-only">Previous</span><svg data-v-c94c6b57="" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path data-v-c94c6b57="" fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                                </svg></li>
-                        </ul>
-                        <ul data-v-c94c6b57="" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                            <li data-v-c94c6b57="" aria-current="page" class="z-10 cursor-pointer bg-white text-gray-500 relative inline-flex items-center px-4 py-2 border text-sm font-medium currentpage">1</li>
-                        </ul>
-                        <ul data-v-c94c6b57="" class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
-                            <li data-v-c94c6b57="" class="opacity-50 pointer-events-none relative cursor-pointer inline-flex items-center px-2 py-2 border bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"><span data-v-c94c6b57="" class="sr-only">Next</span><svg data-v-c94c6b57="" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path data-v-c94c6b57="" fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                                </svg></li>
-                            <li data-v-c94c6b57="" class="opacity-50 pointer-events-none relative cursor-pointer inline-flex items-center px-2 py-2 rounded-r-md border bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"><span data-v-c94c6b57="" class="sr-only">Last</span><svg data-v-c94c6b57="" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path data-v-c94c6b57="" fill-rule="evenodd" d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                                    <path data-v-c94c6b57="" fill-rule="evenodd" d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
-                                </svg></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+<div>
+    <div class="bg-white px-6 py-6 rounded-lg mt-2 grid">
+        <div data-v-c3a81764="" class="bloq-head">
+            <h4 data-v-c3a81764="">Direct Team </h4>
+
+
         </div>
+
+
+
+      <form action="{{route('user.referral-team')}}" method="Get">
+
+            <div class="flex flex-wrap -mx-3 mt-3 items-end">
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                    
+                
+                
+                
+          
+                    
+                    <input type="text" style="height: 3rem;" Placeholder="Search Users"
+                                                        name="search"  class="bg-gray-50 border border-[#ECC762] px-4 py-2 h-[45px] rounded-lg outline-none shadow-none w-full flatpickr-input" value="{{ @$search }}">
+                    </div>
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                
+                
+              
+                       <select name="limit" style="height: 3rem;"                         class="bg-gray-50 border border-[#ECC762] px-4 py-2 h-[45px] rounded-lg outline-none shadow-none w-full flatpickr-input"
+>
+                                                        <option value="10">10</option>
+                                                        <option value="25">25</option>
+                                                        <option value="50">50</option>
+                                                        <option value="100">100</option>
+                                                    </select>
+                    
+                    
+                    </div>
+
+
+
+
+
+                         
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                    
+          
+                        
+                               <div  class="bg-[#ECC762] px-4 py-2 h-[45px] rounded-lg border-[#ECC762] uppercase font-semibold inline-flex items-center transition-all justify-center w-full hover:opacity-90">
+                                                <div class="form-group mb-3">
+                                                     <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
+                                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                                        value="Search" />
+                                                </div>
+                                            </div>
+                        
+                        </div>
+                    
+                <div class="w-full sm:w-1/2 lg:w-3/12 px-3 my-3">
+                    
+          
+                        
+                               <div  class="bg-[#ECC762] px-4 py-2 h-[45px] rounded-lg border-[#ECC762] uppercase font-semibold inline-flex items-center transition-all justify-center w-full hover:opacity-90">
+                                                <div class="form-group mb-3">
+                                                    <a href="{{ route('user.referral-team') }}" style="padding: 0.6rem 2rem;"
+                                                        name="reset"
+                                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                                        value="Reset">Reset</a>
+                                                </div>
+                                            </div>
+                        
+                        </div>
+            </div>
+        </form>
+
+        <div class="overflow-x-auto rounded-lg mt-5">
+
+
+
+
+            <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-[#111] uppercase bg-[#ECC762]">
+                    <tr>
+                        <th scope="col" class="px-6 py-5">Sl No.</th>
+                        <th scope="col" class="px-6 py-5">Member ID</th>
+                        <th scope="col" class="px-6 py-5">Name</th>
+                        <th scope="col" class="px-6 py-5">Email</th>
+                        <th scope="col" class="px-6 py-5">phone</th>
+                        <th scope="col" class="px-6 py-5">Joining Date</th>
+                        <th scope="col" class="px-6 py-5">Status</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <?php if(is_array($direct_team) || is_object($direct_team)){ ?>
+
+                    <?php $cnt = $direct_team->perPage() * ($direct_team->currentPage() - 1); ?>
+                    @foreach ($direct_team as $user)
+                    <tr class="bg-[#EEEEEE] border-b font-medium text-[#111]">
+                        <td class="px-6 py-3"><?= $cnt += 1?></td>
+                        <td class="px-6 py-3">{{ $user->username }}</td>
+                        <td class="px-6 py-3" {{ $user->name }}</td>
+                        <td class="px-6 py-3">
+                            {{ $user->email }}
+                        </td>
+                        <td class="px-6 py-3">
+                            {{ $user->phone }}
+                        </td>
+                        <td class="px-6 py-3">
+                            {{ $user->jdate}}
+                        </td>
+                        <td class="px-6 py-3">
+                            {{ $user->active_status}}
+                        </td>
+
+
+
+                    </tr>
+                    @endforeach
+
+                    <?php }?>
+                </tbody>
+            </table>
+
+
+
+
+
+
+        </div>
+        </br></br>
+
+<style>
+
+/* Pagination container */
+.pagination {
+    display: flex;
+    gap: 6px;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+/* Page item */
+.page-item {
+    display: inline-block;
+}
+
+/* Page link */
+.page-link {
+    padding: 8px 14px;
+    border: 1px solid #dee2e6;
+    color: #111;
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+/* Hover */
+.page-link:hover {
+    background-color: #ECC762;
+    border-color: #ECC762;
+    color: #111;
+}
+
+/* Active page */
+.page-item.active .page-link {
+    background-color: #ECC762;
+    border-color: #ECC762;
+    color: #111;
+    font-weight: 600;
+}
+
+/* Disabled */
+.page-item.disabled .page-link {
+    color: #999;
+    pointer-events: none;
+    background-color: #f5f5f5;
+}
+
+/* Right align */
+.pagination-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+
+
+</style>
+@if ($direct_team->hasPages())
+    <div class="pagination-wrapper">
+        {{ $direct_team->withQueryString()->links() }}
+    </div>
+@endif
+
     </div>
 </div>
